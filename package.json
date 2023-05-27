@@ -22,18 +22,10 @@
     "@mobx/practices": "workspace:*",
     "@mongodb/practices": "workspace:*",
     "@mui/practices": "workspace:*",
-    "@nextjs/practices": "workspace:*",
     "@nodejs/practices": "workspace:*",
     "@puppeteer/practices": "workspace:*",
-    "@reactjs/practices": "workspace:*",
-    "@redux/practices": "workspace:*",
-    "@rollup/practices": "workspace:*",
-    "@routers/practices": "workspace:*",
     "@sass/practices": "workspace:*",
-    "@storybook/practices": "workspace:*",
-    "@styledcomponents/practices": "workspace:*",
-    "@typescript/practices": "workspace:*",
-    "@webpack/practices": "workspace:*"
+    "@typescript/practices": "workspace:*"
   },
   "scripts": {},
   "repository": {
