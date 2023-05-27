@@ -1,0 +1,25 @@
+packages:
+  - @css/practices
+  - @cypress/practices
+  - @dsa/practices
+  - @expressjs/practices
+  - @html/practices
+  - @javascript/practices
+  - @jest/practices
+  - @logics/practices
+  - @markdown/practices
+  - @mobx/practices
+  - @mongodb/practices
+  - @mui/practices
+  - @nextjs/practices
+  - @nodejs/practices
+  - @puppeteer/practices
+  - @reactjs/practices
+  - @redux/practices
+  - @rollup/practices
+  - @routers/practices
+  - @sass/practices
+  - @storybook/practices
+  - @styledcomponents/practices
+  - @typescript/practices
+  - @webpack/practices

@@ -1,0 +1,50 @@
+{
+  "name": "fullstack-interview-practice",
+  "version": "1.0.0",
+  "description": "my fullstack tech-stack practices",
+  "main": "index.js",
+  "devDependencies": {
+    "nodemon": "2.0.22",
+    "dotenv": "16.0.3",
+    "ts-node": "10.9.1",
+    "@types/node": "20.2.5",
+    "prettier": "2.8.8",
+    "typescript": "5.0.4",
+    "@css/practices": "workspace:*",
+    "@cypress/practices": "workspace:*",
+    "@dsa/practices": "workspace:*",
+    "@expressjs/practices": "workspace:*",
+    "@html/practices": "workspace:*",
+    "@javascript/practices": "workspace:*",
+    "@jest/practices": "workspace:*",
+    "@logics/practices": "workspace:*",
+    "@markdown/practices": "workspace:*",
+    "@mobx/practices": "workspace:*",
+    "@mongodb/practices": "workspace:*",
+    "@mui/practices": "workspace:*",
+    "@nextjs/practices": "workspace:*",
+    "@nodejs/practices": "workspace:*",
+    "@puppeteer/practices": "workspace:*",
+    "@reactjs/practices": "workspace:*",
+    "@redux/practices": "workspace:*",
+    "@rollup/practices": "workspace:*",
+    "@routers/practices": "workspace:*",
+    "@sass/practices": "workspace:*",
+    "@storybook/practices": "workspace:*",
+    "@styledcomponents/practices": "workspace:*",
+    "@typescript/practices": "workspace:*",
+    "@webpack/practices": "workspace:*"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://cra2ycoder@github.com/cra2ycoder/fullstack-interview-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cra2ycoder/fullstack-interview-practice/issues"
+  },
+  "homepage": "https://github.com/cra2ycoder/fullstack-interview-practice#readme"
+}
