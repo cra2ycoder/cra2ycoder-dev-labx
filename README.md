@@ -1,14 +1,14 @@
 # fullstack-interview-practice
 
-ALL UNDER ONE ROOF 😇
+ALL UNDER ONE ROOF 😇 WITH MONO REPO ARCHITECTURE 🤩
 
-PRACTICE TILL YOU DIE... 👨‍💻👨🏻‍💻
+___PRACTICE TILL YOU DIE... 👨‍💻👨🏻‍💻___
 
-LIKE TO LEARN 🏄🏼‍♂️
-    LOVE TO SHARE 🤝
-        HAPPY TO CODE 👨‍💻🤓
+LIKE TO **LEARN** 🏄🏼‍♂️
+    LOVE TO **SHARE** 🤝
+        HAPPY TO **CODE** 👨‍💻🤓
             FOREVER!!!😇
 
 🧘🏼‍♂️
-WHAT WE LEARNT 0.00001 🤪😵‍💫🥴
-    WHAT WE YET TO LEARN 10000000000000....😂😂😂 
+WHAT WE LEARNT **0.00001** 🤪😵‍💫🥴
+    WHAT WE YET TO LEARN **10000000000000....**😂😂😂 
