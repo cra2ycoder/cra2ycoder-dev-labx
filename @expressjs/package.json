@@ -1,11 +1,16 @@
 {
-    "name": "@expressjs/practices",
-    "version": "1.0.0",
-    "main": "index.ts",
-    "description": "",
-    "private": "true",
-    "scripts": {},
-    "keywords": [],
-    "author": "",
-    "license": "MIT"
-  }
+  "name": "@expressjs/practices",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "description": "",
+  "private": "true",
+  "dependencies": {
+    "express": "4.18.2"
+  },
+  "scripts": {
+    "dev": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
