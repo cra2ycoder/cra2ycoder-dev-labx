@@ -1,11 +1,13 @@
 {
-    "name": "@javascript/practices",
-    "version": "1.0.0",
-    "main": "index.ts",
-    "description": "",
-    "private": "true",
-    "scripts": {},
-    "keywords": [],
-    "author": "",
-    "license": "MIT"
-  }
+  "name": "@javascript/practices",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "description": "",
+  "private": "true",
+  "scripts": {
+    "simplePromise": "tsc ./src/**/*.ts --outDir ./dist && node ./dist/simplePromise.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
