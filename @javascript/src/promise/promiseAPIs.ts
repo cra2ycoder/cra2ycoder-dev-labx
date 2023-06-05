@@ -96,3 +96,25 @@ Promise.allSettled([promise1, promise2, promise3, promise4])
   .finally(() => {
     console.log('promise executions are done!')
   })
+
+/**
+ * @description
+ *
+ * Promise.any()
+ *
+ * found this error with typescript
+ * error TS2550: Property 'any' does not exist on type 'PromiseConstructor'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2021' or later.
+ *
+ * => yet to be find the solution
+ */
+
+Promise.any([promise1, promise2, promise3, promise4])
+  .then(success => {
+    console.log({ success })
+  })
+  .catch(err => {
+    console.log({ err })
+  })
+  .finally(() => {
+    console.log('promise executions are done!')
+  })
