@@ -1,4 +1,8 @@
 const example1 = new Promise((resolve, reject) => {
+  // setTimeout(() => {
+  //   reject('failed')
+  // }, 50)
+
   setTimeout(() => {
     resolve('success')
   }, 100)
@@ -25,8 +29,10 @@ example1.then(
  */
 example1
   .then(x => {
+    // success zone
     console.log(x)
   })
   .catch(err => {
+    // error zone
     console.log(err)
   })

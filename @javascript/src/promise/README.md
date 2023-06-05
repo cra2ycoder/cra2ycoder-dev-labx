@@ -31,3 +31,8 @@ var myPromise = new Promises((resolve, reject) => {
 -   **pending:** api request to the server and waiting for response
 -   **resolved:** successfully server sends the response
 -   **rejected:** operation failed due to some error
+
+
+## should know?
+
+- promise can solve only one method at a time either `resolve` or `reject` 
