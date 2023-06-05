@@ -4,10 +4,7 @@
   "main": "index.ts",
   "description": "",
   "private": "true",
-  "scripts": {
-    "simplePromise": "tsc ./src/**/*.ts --outDir ./dist && node ./dist/simplePromise.js",
-    "multiplePromise": "tsc ./src/**/*.ts --outDir ./dist && node ./dist/multiplePromise.js"
-  },
+  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "MIT"
