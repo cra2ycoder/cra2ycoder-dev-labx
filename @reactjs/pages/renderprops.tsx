@@ -1,4 +1,4 @@
-import { ClassRenderProp, FunctionRenderProp } from '../code/RenderProps'
+import { ClassRenderProp, FunctionRenderProp } from '@/RenderProps'
 
 const renderHeading = () => {
   return <h3>heading</h3>

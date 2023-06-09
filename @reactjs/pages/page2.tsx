@@ -10,7 +10,7 @@ import {
   FlowerGallery,
   TodoList,
   RefExample,
-} from '../code/components/function'
+} from '@/components/function'
 
 export default function Page2() {
   return (

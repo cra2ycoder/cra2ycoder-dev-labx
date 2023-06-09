@@ -1,4 +1,4 @@
-import { ErrorBoundary, ErrorComponent } from '../code/errors/ErrorBoundary'
+import { ErrorBoundary, ErrorComponent } from '@/errors/ErrorBoundary'
 
 export default function Error() {
   return (

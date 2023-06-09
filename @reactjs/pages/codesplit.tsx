@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react'
 
-const LazyLoadShape = lazy(() => import('../code/codesplit/Shape'))
-const LazyLoadPosts = lazy(() => import('../code/codesplit/Posts'))
+const LazyLoadShape = lazy(() => import('@/codesplit/Shape'))
+const LazyLoadPosts = lazy(() => import('@/codesplit/Posts'))
 
 export default function CodeSplit() {
   return (

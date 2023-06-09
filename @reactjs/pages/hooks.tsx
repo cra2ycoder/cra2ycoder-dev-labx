@@ -16,7 +16,7 @@ import {
   RefExample,
   UseTransitionHookExample,
   UseDeferredValueExample,
-} from '../code/hooks'
+} from '@/hooks'
 
 export default function Hooks() {
   return (

@@ -1,4 +1,4 @@
-import { Attributes, InlineStyle, XSSSupport } from '../code/DOMElements'
+import { Attributes, InlineStyle, XSSSupport } from '@/DOMElements'
 
 export default function DOMElements() {
   return (

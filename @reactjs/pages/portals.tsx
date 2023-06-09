@@ -1,4 +1,4 @@
-import { PortalExample } from '../code/Portals'
+import { PortalExample } from '@/Portals'
 
 export default function Portals() {
   return (

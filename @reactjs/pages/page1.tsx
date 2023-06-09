@@ -12,7 +12,7 @@ import {
   FlowerGallery,
   TodoList,
   RefExample,
-} from '../code/components/class'
+} from '@/components/class'
 
 export default class Page1 extends React.Component {
   render() {

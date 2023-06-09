@@ -1,4 +1,4 @@
-import { TodoList, PostList } from '../code/hoc/example'
+import { TodoList, PostList } from '@/hoc/example'
 
 export default function Hoc() {
   return (
