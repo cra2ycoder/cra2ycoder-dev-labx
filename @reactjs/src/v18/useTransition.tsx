@@ -1,17 +1,23 @@
 import React, { useState, useTransition } from 'react'
 
-function StartTransitions() {
+/**
+ * @api
+ * https://react.dev/reference/react/useTransition
+ */
+
+function UseTransitions() {
   const [searchValue, setSearchValue] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
   const [isPending, startTransition] = useTransition()
 
   const onTyping = e => {
-    console.log(e.target.value)
+    // console.log(e.target.value)
 
     setSearchValue(e.target.value)
 
     startTransition(() => {
       setSearchQuery(searchValue)
+      console.log('inside start transitions!!!')
     })
   }
 
@@ -27,4 +33,4 @@ function StartTransitions() {
   )
 }
 
-export default StartTransitions
+export default UseTransitions

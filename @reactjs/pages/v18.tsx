@@ -1,13 +1,16 @@
 import React from 'react'
 import AutomaticBatching from '@/v18/AutomaticBatching'
-import StartTransitions from '@/v18/StartTransitions'
+import UseTransitions from '@/v18/useTransition'
+import UseDebugValue from '@/v18/useDebugValue'
 
 function v18() {
   return (
     <div>
       <AutomaticBatching />
       <hr />
-      <StartTransitions />
+      <UseTransitions />
+      <hr />
+      <UseDebugValue />
     </div>
   )
 }
