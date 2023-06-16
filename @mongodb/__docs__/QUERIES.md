@@ -124,4 +124,9 @@ db.employees.findOne({ employeeId: 12121 })
 // _id, is unique which generated and added by the mongodb
 db.employees.findOne({ employeeId: 12121 }, { employeeName: 1, _id: 0})
 
+// find all documents
+db.<COLLECTION_NAME>.find({})
+
+// find all the documents and response only with employeeName
+db.<COLLECTION_NAME>.find({}, { employeeName: 1, _id: 0})
 ```
