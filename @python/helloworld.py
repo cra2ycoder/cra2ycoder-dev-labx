@@ -82,3 +82,62 @@ print(description.title()) # Python Is So Easy To Learn
 
 # ensure the char is available
 print('easy' in description)
+
+
+# numbers
+# division
+print(10/3)
+# remainder
+print(10//3)
+# modulus
+print(10 % 3)
+# power of
+print(10 ** 3)
+
+x = 10
+x = x + 3
+x += 3
+print(x)
+
+# operator precedence (order of operation)
+y = 10 + 3 * 2
+print(y)
+
+## order
+# 0. parenthesis
+# 1. exponentiation (**)
+# 2. multiplication or division (* /)
+# 3. addition or subtraction (+ -)
+
+## Math functions
+z = 2.9
+print(round(z))
+
+# always positive number
+print(abs(-z))
+
+## if statements
+is_hot = True
+
+
+# simple if
+if is_hot:
+    print("It's a hot day")
+    print("Drink plenty of water")
+
+print("Enjoy your day!")
+
+# if else
+is_cold = True
+if is_cold:
+    print("It's a cold day!")
+else:
+    print("It's a hot day!")
+
+# nested if
+if is_hot:
+    print("It's hot day")
+elif is_cold:
+    print("It's cold day")
+else:
+    print("Enjoy your day!")
