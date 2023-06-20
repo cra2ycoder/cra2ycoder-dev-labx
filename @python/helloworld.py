@@ -69,3 +69,16 @@ print(message)
 print(msg)
 
 ## string methods
+description = "python is so easy to learn"
+print(len(description))
+
+# this will not change the original text
+print(description.upper())
+print(description.lower())
+print(description)
+print(description.find('p'))
+print(description.replace('so easy', 'very easy'))
+print(description.title()) # Python Is So Easy To Learn
+
+# ensure the char is available
+print('easy' in description)
