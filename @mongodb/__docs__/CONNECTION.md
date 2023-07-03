@@ -48,6 +48,17 @@ run().catch(console.dir)
 
 ```
 ---
+- using brew 
+  
+```sh
+# to start mongodb server
+brew services start mongodb-community
+
+# to stop mongodb server
+brew services stop mongodb-community
+```
+
+---
 
 - using `mongoose` npm package by writting javascripts
 
