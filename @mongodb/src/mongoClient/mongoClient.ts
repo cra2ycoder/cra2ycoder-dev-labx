@@ -22,14 +22,14 @@ async function run() {
     await client.connect()
 
     // Send a ping to confirm a successful connection
-    const db = await client.db('infosys')
-    const employees = await db.collection('employees')
+    // const db = await client.db('infosys')
+    // const employees = await db.collection('employees')
 
     // employees.insertOne({ name: 'mohan', empId: 1096449 })
-    employees.insertMany([
-      { name: 'michael', empId: 1096450 },
-      { name: 'jo', empId: 1096550 },
-    ])
+    // employees.insertMany([
+    //   { name: 'michael', empId: 1096450 },
+    //   { name: 'jo', empId: 1096550 },
+    // ])
 
     console.log(
       'Pinged your deployment. You successfully connected to MongoDB!'
