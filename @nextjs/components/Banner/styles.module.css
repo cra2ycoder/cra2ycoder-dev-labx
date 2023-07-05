@@ -1,0 +1,9 @@
+.bannerMain {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.bannerMain > * {
+    margin-bottom: 1rem;
+}
