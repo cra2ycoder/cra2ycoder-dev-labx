@@ -41,7 +41,9 @@
     "**/.DS_Store": true,
     "**/.gitignore": true,
     "**/node_modules": true,
-    "**/.next": true
+    "**/.next": true,
+    "**/__pycache__": true,
+    "**/.idea": true
   },
   "search.exclude": {
     "**/node_modules": true,
