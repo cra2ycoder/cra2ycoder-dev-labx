@@ -78,3 +78,9 @@ df.values # => prints the value as two dimensional array format
 - for auto intellisense -> `<instance>.<press_tab_key>`
 - for tooltip of a method/description of the method -> click on the method let cursor be there and press `shift+tab`
 - `ctrl+/` for commenting out
+- `ctrl+enter` for running the current panle script without opening the new script panel
+
+## Write ML
+
+- play with music csv list 
+- url: http://bit.ly/music-csv (fake data)
