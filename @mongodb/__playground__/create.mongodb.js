@@ -294,3 +294,18 @@ const getCurrentMonth = () => {
 // )
 
 // prob 10: adding a property of to all items in an array
+db.year_2023.updateOne(
+  {
+    month: 'jul',
+  },
+  {
+    $set: {
+      // !!! beware - which will replace existing
+      // 'loans.$[]': {
+      //   status: 'open',
+      // },
+      // !!! good to go
+      'loans.$[].status': 'open',
+    },
+  }
+)
