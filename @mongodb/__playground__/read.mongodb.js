@@ -90,18 +90,30 @@ use('budget')
 //   }
 // )
 
-//!!! prob 11: get a document(s) based on the value comparison
+//!!! prob 11: get a document(s) based on the property exists
 db.year_2023.find(
   {
-    savings: {
-      //   $gt: 10000, // greater than >
-      //   $gte: 20000, // greater than or equal to >=
-      //   $lt: 1000, // less than <
-      //   $lte: 10000, // less than or equal to <=
-      //   $ne: 500, // not equal to !=
+    targetAchieved: {
+      $exists: true,
     },
   },
   {
     _id: 0,
   }
 )
+
+//!!! prob 12: get a document(s) based on the value comparison
+// db.year_2023.find(
+//   {
+//     savings: {
+//       //   $gt: 10000, // greater than >
+//       //   $gte: 20000, // greater than or equal to >=
+//       //   $lt: 1000, // less than <
+//       //   $lte: 10000, // less than or equal to <=
+//       //   $ne: 500, // not equal to !=
+//     },
+//   },
+//   {
+//     _id: 0,
+//   }
+// )
