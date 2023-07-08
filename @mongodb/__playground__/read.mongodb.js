@@ -58,13 +58,25 @@ use('budget')
 //!!! prob 6: get only specific node response
 // db.year_2023.find({ month: 'jun' }, { bankNames: 1, _id: 0 })
 
-//!!! prob 7: get a document based on the equality
-// db.year_2023.find({ month: { $eq: 'mar' } })
-
-//!!! prob 8: get a document(s) based on the regex matchings
+//!!! prob 7: get a document(s) based on the regex matchings
 // db.year_2023.find({ month: { $regex: /j/ } })
 
-//!!! prob 9: get a document(s) by referring array element match
+//!!! prob 8: get a document based on the equality - direct match
+// db.year_2023.find({ month: { $eq: 'mar' } })
+
+//!!! prob 9: get a document(s) by referring array exact match [] === []
+// db.year_2023.find(
+//   {
+//     bankNames: {
+//       $eq: ['axis', 'hdfc', 'sbi'],
+//     },
+//   },
+//   {
+//     _id: 0,
+//   }
+// )
+
+//!!! prob 10: get a document(s) by referring array of element match inside array [n] === [n]
 // db.year_2023.find(
 //   {
 //     bankNames: {
@@ -78,20 +90,7 @@ use('budget')
 //   }
 // )
 
-//!!! prob 10: get a document(s) by referring array element match but exact match
-// db.year_2023.find(
-//   {
-//     bankNames: {
-//       $eq: ['axis', 'hdfc', 'sbi'],
-//     },
-//   },
-//   {
-//     _id: 0,
-//   }
-// )
-
 //!!! prob 11: get a document(s) based on the value comparison
-
 db.year_2023.find(
   {
     savings: {
