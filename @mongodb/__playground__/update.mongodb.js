@@ -1,15 +1,16 @@
 use('budget')
 
 /**
- * what are our data basically?
+ * what are we basically try to add/modify/remove?
+ * Is Nothing But "data"
  *
- * data types / objects
- *
+ * SINGLE:
  * - string => ""
  * - number => 0-9
  * - boolean => true/false
  * - date => { year: new Date() }
  *
+ * GROUP:
  * - array => [], [[]...], [{}, {}...]
  * - object => { x, y...}, {a: [], b: '' ...}
  */
@@ -214,14 +215,13 @@ use('budget')
 // )
 
 // !!! prob 12: renaming the property
-db.year_2023.updateOne(
-  { month: 'jul' },
-  {
-    $rename: {
-      accountBalance: 'total',
-
-      // !!! watch the prop on both side
-      'account.bank': 'account.bankName',
-    },
-  }
-)
+// db.year_2023.updateOne(
+//   { month: 'jul' },
+//   {
+//     $rename: {
+//       accountBalance: 'total',
+//       // !!! watch the prop on both side
+//       'account.bank': 'account.bankName',
+//     },
+//   }
+// )
