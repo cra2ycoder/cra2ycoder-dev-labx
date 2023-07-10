@@ -222,7 +222,7 @@ use('budget')
 //   }
 // )
 
-// !!! prob 12: renaming the property
+//!!! prob 12: renaming the property
 // db.year_2023.updateOne(
 //   { month: 'jul' },
 //   {
@@ -230,6 +230,58 @@ use('budget')
 //       accountBalance: 'total',
 //       // !!! watch the prop on both side
 //       'account.bank': 'account.bankName',
+//     },
+//   }
+// )
+
+//!!! prob 13: increment/decrement a value
+// db.year_2023.updateOne(
+//   {
+//     month: 'jan',
+//   },
+//   {
+//     $inc: {
+//       //   savings: 1000, // increment
+//       // savings: -5000, // decrement
+//       //   expenses: 10000,
+//     },
+//   }
+// )
+
+//!!! prob 14: if minimum value change
+// value < existing => changes otherwise wont change
+// db.year_2023.updateOne(
+//   {
+//     month: 'jan',
+//   },
+//   {
+//     $min: {
+//       savings: 5000,
+//     },
+//   }
+// )
+
+//!!! prob 15: if maximum value change
+// this will work for Date :)
+// db.year_2023.updateOne(
+//   {
+//     month: 'jan',
+//   },
+//   {
+//     $max: {
+//       savings: 10000,
+//     },
+//   }
+// )
+
+//!!! prob 16: multiply and update
+// db.year_2023.updateOne(
+//   {
+//     month: 'jan',
+//   },
+//   {
+//     $mul: {
+//       savings: 100,
 //     },
 //   }
 // )

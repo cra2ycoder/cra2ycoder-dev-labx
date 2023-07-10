@@ -159,24 +159,151 @@ use('budget')
 // })
 
 //!!! prob 15: prop && prop == value
-// !!! prob 16: prop && prop != value
-db.year_2023.find(
-  {
-    $and: [
-      {
-        targetAchieved: {
-          $exists: false,
-        },
-      },
-      {
-        targetAchieved: {
-          $ne: false,
-          // $eq: false,
-        },
-      },
-    ],
-  },
-  {
-    _id: 0,
-  }
-)
+//!!! prob 16: prop && prop != value
+// db.year_2023.find(
+//   {
+//     $and: [
+//       {
+//         targetAchieved: {
+//           $exists: false,
+//         },
+//       },
+//       {
+//         targetAchieved: {
+//           $ne: false,
+//           // $eq: false,
+//         },
+//       },
+//     ],
+//   },
+//   {
+//     _id: 0,
+//   }
+// )
+
+//!!! prob 17: prob.indexOf('canara') || prop > 10000
+// db.year_2023.find(
+//   {
+//     $or: [
+//       {
+//         savings: {
+//           $gt: 10000,
+//         },
+//       },
+//       {
+//         savings: {
+//           $in: ['canara'],
+//         },
+//       },
+//     ],
+//   },
+//   {
+//     _id: false,
+//   }
+// )
+
+//!!! prob 18: !(prop === 10000)
+//!!! prob 19: !(prop !== 10000)
+// db.year_2023.find({
+//   savings: {
+//     $not: {
+//       // $eq: 10000,
+//       // $ne: 10000
+//     },
+//   },
+// })
+
+//!!! prob 20: !(value.test(regex))
+// db.year_2023.find(
+//   {
+//     month: {
+//       $not: {
+//         $regex: /j/,
+//       },
+//     },
+//   },
+//   {
+//     _id: 0,
+//   }
+// )
+
+//!!! prob 21: !(value === 10000) || !(value)
+// db.year_2023.find({
+//   $nor: [
+//     {
+//       month: {
+//         $eq: 'feb',
+//       },
+//     },
+//     {
+//       targetAchieved: {
+//         $eq: false,
+//       },
+//     },
+//   ],
+// })
+
+//!!! prob 22: typeof value === 'string'
+// http://www.mongodb.com/docs/manual/reference/operator/query/type/
+// db.year_2023.find({
+//   targetAchieved: {
+//     // $type: 'string',
+//     // $type: 'bool',
+//   },
+// })
+
+//!!! prob 23: (value % 100) === 0
+// $mod: [divisor, remainder]
+// db.year_2023.find(
+//   {
+//     savings: {
+//       $mod: [1000, 0],
+//     },
+//   },
+//   {
+//     _id: 0,
+//   }
+// )
+
+//!!! prob 24: array.filter(x => [a, b, c...].includes(x))
+//or x === 'axis' || x === 'canara' || x...
+// db.year_2023.find(
+//   {
+//     bankNames: {
+//       $all: ['axis', 'canara'],
+//     },
+//   },
+//   {
+//     _id: 0,
+//   }
+// )
+
+// if its two dimensional array then
+// $all: [
+//   ['val1', 'val2']
+// ]
+
+//!!! prob 24: array.length === value
+// db.year_2023.find(
+//   {
+//     bankNames: {
+//       $size: 3,
+//     },
+//   },
+//   {
+//     _id: 0,
+//   }
+// )
+
+//!!! prob 25: slicing array
+// db.year_2023.find(
+//   {},
+//   {
+//     bankNames: {
+//       // $slice: 2,
+//       // $slice: -2
+//       // $slice: [1, 2],
+//     },
+//     _id: 0,
+//   }
+// )
