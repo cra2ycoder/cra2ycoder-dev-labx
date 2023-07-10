@@ -29,6 +29,14 @@ use('budget')
  * )
  */
 
+/**
+ * operators:
+ * $set
+ * $push, $each, $addToSet, $position, $sort, xxxx.$[], xxxx.$[element]
+ * $rename
+ *
+ */
+
 // !!! prob 1: adding simple data
 // db.year_2023.updateOne(
 //   {

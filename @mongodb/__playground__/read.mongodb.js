@@ -39,6 +39,15 @@ use('budget')
 //   },
 // ])
 
+/**
+ * operators:
+ * $regex
+ * $eq
+ * $exists
+ * $gt, $gte, $lt, $lte, $ne
+ * $in, $nin
+ */
+
 //!!! prob 1: get a collection details from current database
 // db.getCollectionInfos()
 
@@ -61,7 +70,7 @@ use('budget')
 //!!! prob 7: get a document(s) based on the regex matchings
 // db.year_2023.find({ month: { $regex: /j/ } })
 
-//!!! prob 8: get a document based on the equality - direct match
+//!!! prob 8: get a document based on the equality - direct match (val === 'mar')
 // db.year_2023.find({ month: { $eq: 'mar' } })
 
 //!!! prob 9: get a document(s) by referring array exact match [] === []
@@ -91,29 +100,83 @@ use('budget')
 // )
 
 //!!! prob 11: get a document(s) based on the property exists
-db.year_2023.find(
-  {
-    targetAchieved: {
-      $exists: true,
-    },
-  },
-  {
-    _id: 0,
-  }
-)
-
-//!!! prob 12: get a document(s) based on the value comparison
 // db.year_2023.find(
 //   {
-//     savings: {
-//       //   $gt: 10000, // greater than >
-//       //   $gte: 20000, // greater than or equal to >=
-//       //   $lt: 1000, // less than <
-//       //   $lte: 10000, // less than or equal to <=
-//       //   $ne: 500, // not equal to !=
+//     targetAchieved: {
+//       $exists: true,
 //     },
 //   },
 //   {
 //     _id: 0,
 //   }
 // )
+
+//!!! prob 12: get a document(s) based on the value comparison
+/**
+ * value > 10000
+ * value >= 10000
+ * value < 10000
+ * value <= 10000
+ * value != 10000
+ * value != 'apr'
+ */
+// db.year_2023.find(
+//   {
+//     // savings: {
+//     //   //   $gt: 10000, // greater than >
+//     //   //   $gte: 20000, // greater than or equal to >=
+//     //   //   $lt: 1000, // less than <
+//     //   //   $lte: 10000, // less than or equal to <=
+//     //   //   $ne: 500, // not equal to !=
+//     // },
+//     // month: {
+//     //   $ne: 'apr',
+//     // },
+//   },
+//   {
+//     _id: 0,
+//   }
+// )
+
+//!!! prob 13: get a document(s) based on the value which is not in or in
+/**
+ * ['jan', 'jun', 'feb'].indexOf(value) >= 0
+ * ['jan', 'jun', 'feb'].indexOf(value) === -1
+ */
+// db.year_2023.find({
+//   month: {
+//     // $nin: ['jan', 'jun', 'feb'],
+//     // $in: ['jan', 'jun', 'feb'],
+//   },
+// })
+
+//!!! prob 14: get a document(s) based on the value which is not in ot in => array
+// db.year_2023.find({
+//   bankNames: {
+//     // $in: ['canara']
+//     // $nin: ['canara'],
+//   },
+// })
+
+//!!! prob 15: prop && prop == value
+// !!! prob 16: prop && prop != value
+db.year_2023.find(
+  {
+    $and: [
+      {
+        targetAchieved: {
+          $exists: false,
+        },
+      },
+      {
+        targetAchieved: {
+          $ne: false,
+          // $eq: false,
+        },
+      },
+    ],
+  },
+  {
+    _id: 0,
+  }
+)
