@@ -1,11 +1,16 @@
 {
-    "name": "@sass/practices",
-    "version": "1.0.0",
-    "main": "index.ts",
-    "description": "",
-    "private": "true",
-    "scripts": {},
-    "keywords": [],
-    "author": "",
-    "license": "MIT"
-  }
+  "name": "@sass/practices",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "description": "",
+  "private": "true",
+  "scripts": {
+    "dev": "sass --watch --no-source-map stylesheets:dist"
+  },
+  "devDependencies": {
+    "sass": "1.63.6"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

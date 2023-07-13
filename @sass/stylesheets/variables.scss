@@ -1,0 +1,10 @@
+$font-family: 'Fira Code';
+$primary-web-color: white;
+$secondary-web-color: black;
+$primary-border: 1px solid #ccc;
+
+body {
+  //refer the changes at ./dist/variables.css
+  font-family: $font-family;
+  background-color: $primary-web-color;
+}

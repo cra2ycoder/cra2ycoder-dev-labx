@@ -1,0 +1,9 @@
+@use './themes';
+
+p {
+  // this is how we use global variables from other files
+  background-color: themes.$web-page-color;
+
+  // extending from other modules
+  @extend .this-style-for-inherit-1;
+}

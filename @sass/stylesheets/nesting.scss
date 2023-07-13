@@ -1,0 +1,17 @@
+@use './themes';
+
+nav {
+  ul.ul-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: inline-block;
+      background-color: yellow;
+
+      // this .this-style-for-inherit-0 is coming form ./_themes
+      @extend .this-style-for-inherit-0;
+    }
+  }
+}
