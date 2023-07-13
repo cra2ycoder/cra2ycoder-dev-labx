@@ -5,7 +5,8 @@
   "description": "",
   "private": "true",
   "scripts": {
-    "dev": "sass --watch --no-source-map stylesheets:dist"
+    "dev": "sass --watch --no-source-map stylesheets:dist",
+    "dev:js": "tsc index.ts --outDir ./dist && node ./dist/index.js"
   },
   "devDependencies": {
     "sass": "1.63.6"

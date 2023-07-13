@@ -1,3 +1,6 @@
+// IMPORTANT NOTE: SASS recommendations is @use only not @import due to serious errors
+// https://sass-lang.com/documentation/at-rules/import/
+
 @use './themes';
 
 p.modules {
