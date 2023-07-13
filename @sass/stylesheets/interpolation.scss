@@ -1,0 +1,20 @@
+@mixin clear-margin($className, $loc) {
+  #{$className} {
+    margin-#{$loc}: 0;
+  }
+}
+
+@mixin set-flex-layout($className) {
+  #{$className} {
+    display: flex;
+
+    @content;
+  }
+}
+
+@include clear-margin('.clear-margin', 'left');
+
+@include set-flex-layout('.interpolation-with-content') {
+  align-items: center;
+  justify-content: center;
+}

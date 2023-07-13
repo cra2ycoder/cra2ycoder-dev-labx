@@ -1,0 +1,27 @@
+@use 'sass:color';
+@use 'sass:list';
+@use 'sass:map';
+
+.color-modules {
+  //   color: color.adjust(#998099, $lightness: -30%, $alpha: -0.4);
+  color: color.blackness(white);
+}
+
+.margin-modules {
+  // sass list
+  margin: list.append((0, 1rem, 0, 1rem), null, $separator: space);
+}
+
+//sass map
+$theme-config: (
+  container: (
+    display: 'flex',
+    width: '100px',
+    maxWidth: 1024px,
+    margin: auto,
+  ),
+  fontStyle: (
+    size: 2rem,
+    color: black,
+  ),
+);

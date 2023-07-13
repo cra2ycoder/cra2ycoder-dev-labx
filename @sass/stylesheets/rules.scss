@@ -1,0 +1,81 @@
+@use 'sass:math';
+
+// simple function
+@function get-percentage($container-width, $window-width) {
+  @return math.div($container-width, $window-width) * 100%;
+}
+
+// function with if condition
+@function get-margin-values($device-type) {
+  @if $device-type == '' {
+    @error "value must be declared";
+    @return null;
+  }
+
+  @if $device-type == 'desktop' {
+    @return 2rem;
+  } @else if $device-type == 'tablet' {
+    @return 1.4rem;
+  } @else if $device-type == 'mobile' {
+    @return 0.8rem;
+  } @else {
+    @return 0;
+  }
+}
+
+// each with list
+@mixin set-font-style($list) {
+  $css-props: ('font-family', 'font-size', 'color');
+
+  @each $prop in $css-props {
+    #{$prop}: nth($list, index($css-props, $prop));
+  }
+}
+
+// each with map
+@mixin set-margin($map) {
+  @each $key, $val in $map {
+    margin-#{$key}: $val;
+  }
+}
+
+// for loop
+@mixin set-padding($val) {
+  $map-props: ('left', 'top', 'right', 'bottom');
+
+  @for $idx from 1 through length($val) {
+    padding-#{nth($map-props, $idx)}: nth($val, $idx);
+  }
+}
+
+// while loop
+// @while $cond1 > $cond2 {
+//     // do something
+// }
+// IMPORTANT NOTE: according to sass documentation they are recommending to use only @each and @for :P
+
+$condition: true;
+
+div.rules-testing {
+  width: get-percentage(300, 1000);
+  margin: get-margin-values('desktop');
+
+  // kind of conditional operator
+  display: if($condition, flex, null);
+
+  // list props
+  @include set-font-style(('Open Sans', 2rem, black));
+
+  // map props
+  @include set-margin(
+    (
+      'left': 0,
+      'top': 1rem,
+      'right': 0,
+      'bottom': 1rem,
+    )
+  );
+
+  // list with for loop
+  @include set-padding((10px, 20px, 30px, 40px));
+}
