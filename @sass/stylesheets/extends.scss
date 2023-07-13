@@ -2,7 +2,7 @@
   width: 100px;
   height: 100px;
   background-color: black;
-  border-radius: 2px;
+  border-radius: 1rem;
 }
 
 %heading {
@@ -21,4 +21,8 @@
 .heading2 {
   @extend %heading;
   color: pink;
+}
+
+.box {
+  @extend %box;
 }
