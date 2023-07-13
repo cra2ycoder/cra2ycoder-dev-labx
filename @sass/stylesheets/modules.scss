@@ -1,6 +1,6 @@
 @use './themes';
 
-p {
+p.modules {
   // this is how we use global variables from other files
   background-color: themes.$web-page-color;
 

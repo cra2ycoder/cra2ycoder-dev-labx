@@ -1,0 +1,16 @@
+@mixin setTextTheme($color: black, $size: 1rem) {
+  color: $color;
+  font-size: $size;
+}
+
+p.alert {
+  @include setTextTheme(red, 0.8rem);
+}
+
+p.success {
+  @include setTextTheme(green, 0.8rem);
+}
+
+p.desc {
+  @include setTextTheme();
+}
