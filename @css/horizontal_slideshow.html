@@ -10,6 +10,8 @@
         width: 100%;
         display: flex;
         overflow: auto;
+
+        /* enabling carousel settings on: horizontal view */
         scroll-snap-type: x mandatory;
 
         /* just to see outline */
@@ -17,13 +19,19 @@
       }
 
       .container > section {
+        /* basic props */
         width: 100%;
-        scroll-snap-align: center;
-        flex: none;
-        block-size: 100vh;
         text-align: center;
-
         font-size: 25vh;
+
+        /* on each scroll setting the slide to stop at middle/center */
+        scroll-snap-align: center;
+
+        /* important prop: to eliminate flex props on horizontal view */
+        flex: none;
+
+        /* setting full height of the window to section */
+        block-size: 100vh;
       }
     </style>
   </head>
