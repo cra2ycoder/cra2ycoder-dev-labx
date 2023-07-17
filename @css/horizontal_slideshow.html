@@ -7,25 +7,29 @@
     <style>
       /* working in progress */
       .container {
+        width: 100%;
         display: flex;
-        flex-flow: row nowrap;
-
+        overflow: auto;
         scroll-snap-type: x mandatory;
+
+        /* just to see outline */
+        outline: 1px dashed lightgray;
       }
 
       .container > section {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
         width: 100%;
+        scroll-snap-align: center;
+        flex: none;
         block-size: 100vh;
+        text-align: center;
+
+        font-size: 25vh;
       }
     </style>
   </head>
   <body>
     <!-- working in progress -->
-    <section class="container" dir="ltr">
+    <section class="container" dir="rlt">
       <section>slide 1</section>
       <section>slide 2</section>
       <section>slide 3</section>
