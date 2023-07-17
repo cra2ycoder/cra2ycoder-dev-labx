@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Super Long Word</title>
+    <style>
+      .parent {
+        width: 20%;
+      }
+
+      .parent div {
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <!-- wraps by default -->
+      <div>super<br />long<br />word</div>
+      <!-- wraps only when its required on resizing -->
+      <div>super<wbr />long<wbr />word</div>
+      <!-- when wraps it will add hyphen automatically -->
+      <div>super&shy; long&shy; word</div>
+    </div>
+  </body>
+</html>
