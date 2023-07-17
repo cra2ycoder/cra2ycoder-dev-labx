@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gradient Shadow</title>
+    <style>
+      .gradient-shadow {
+        --gradient: linear-gradient(to bottom right, lime, cyan);
+
+        background: var(--gradient);
+
+        inline-size: 75vmin;
+        aspect-ratio: 4/3;
+        border-radius: 1rem;
+        position: relative;
+      }
+
+      .gradient-shadow::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: red;
+        z-index: -1;
+        border-radius: inherit;
+
+        transform: translateY(15%) scale(0.8);
+        filter: blur(30px) brightness(1.2);
+        background: var(--gradient);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gradient-shadow"></div>
+  </body>
+</html>
