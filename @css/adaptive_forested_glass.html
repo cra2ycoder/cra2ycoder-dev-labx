@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adaptive Forested Glass Effect</title>
+    <style>
+      figure {
+        position: relative;
+        width: 300px;
+      }
+
+      figure picture img {
+        width: 100%;
+      }
+
+      figcaption {
+        position: absolute;
+        bottom: 0;
+        padding: 1.5rem;
+        color: white;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .adaptive-glass-effect {
+        --glass-light: 100%;
+
+        /* applying the color with variable support to switch the colors */
+        background-color: hsl(0% 0% var(--glass-light) / 50%);
+
+        /* making the blur effect */
+        backdrop-filter: blur(40px);
+
+        /* this media will work only when theme gets changing */
+        /* console panel > ctrl + shift + p > type: rendering & choose show: rendering option */
+        /* enable/disable dark mode or, Emulate CSS media feature prefers-colors-scheme */
+        @media (prefers-color-scheme: dark) {
+          --glass-light: 0%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <figure>
+      <picture>
+        <img
+          src="https://media.istockphoto.com/id/1181366400/photo/in-the-hands-of-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-on.jpg?s=2048x2048&w=is&k=20&c=cJasnH6-720p10tQl-kxhO7VCNjzbTs5aOhNt2AoVfk="
+          alt="nature image"
+        />
+      </picture>
+      <figcaption class="adaptive-glass-effect">Nature Image</figcaption>
+    </figure>
+  </body>
+</html>
