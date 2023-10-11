@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background-color: black;
+      }
+
+      #tags-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+      .box {
+        background-color: #0b0d22;
+        color: #6e6e6e;
+        width: max-content;
+        flex-grow: 1;
+        flex-basis: max-content;
+        min-width: fit-content;
+        height: 40px;
+        padding: 1rem;
+        border-radius: 0.5rem;
+      }
+
+      @keyframes slide-fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(5vh);
+        }
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .box {
+          view-timeline-name: --item-timeline;
+          animation: slide-fade-in both;
+          animation-timeline: --item-timeline;
+          animation-range: contain 0% contain 50%;
+        }
+      }
+    </style>
+    <script>
+      const allHTMLTags = `
+          a
+          abbr
+          acronym
+          address
+          area
+          article
+          aside
+          audio
+          b
+          base
+          bdi
+          bdo
+          big
+          blockquote
+          body
+          br
+          button
+          canvas
+          caption
+          center
+          cite
+          code
+          col
+          colgroup
+          data
+          datalist
+          dd
+          del
+          details
+          dfn
+          dialog
+          dir
+          div
+          dl
+          dt
+          em
+          embed
+          fieldset
+          figcaption
+          figure
+          font
+          footer
+          form
+          frame
+          frameset
+          h1
+          head
+          header
+          hgroup
+          hr
+          html
+          i
+          iframe
+          image
+          img
+          input
+          ins
+          kbd
+          label
+          legend
+          li
+          link
+          main
+          map
+          mark
+          marquee
+          menu
+          menuitem
+          meta
+          meter
+          nav
+          nobr
+          noembed
+          noframes
+          noscript
+          object
+          ol
+          optgroup
+          option
+          output
+          p
+          param
+          picture
+          plaintext
+          portal
+          xperimenta
+          pre
+          progress
+          q
+          rb
+          rp
+          rt
+          rtc
+          ruby
+          s
+          samp
+          script
+          search
+          section
+          select
+          slot
+          small
+          source
+          span
+          strike
+          strong
+          style
+          sub
+          summary
+          sup
+          table
+          tbody
+          td
+          template
+          textarea
+          tfoot
+          th
+          thead
+          time
+          title
+          tr
+          track
+          tt
+          u
+          ul
+          var
+          video
+          wbr
+          xmp`
+
+      function loadTags() {
+        const tagListAsArr = allHTMLTags
+          .split(' ')
+          .map(x => x.trim())
+          .filter(Boolean)
+
+        const parent = document.getElementById('tags-grid')
+        parent.innerHTML = tagListAsArr
+          .map(y => {
+            return `<div class="box">&lt;${y.toString()}/&gt;</div>`
+          })
+          .join('\n')
+      }
+    </script>
+  </head>
+  <body onload="loadTags();">
+    <div id="tags-grid" class="grid"></div>
+  </body>
+</html>

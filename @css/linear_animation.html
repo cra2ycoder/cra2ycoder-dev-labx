@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* reference site: https://linear-easing-generator.netlify.app/ */
+      :root {
+        --spring-easing: linear(
+          0,
+          0.14066 4.43%,
+          0.93834 16.722%,
+          1.07743 20.432%,
+          1.14934 24.312%,
+          1.16294 26.953%,
+          1.15356 29.933%,
+          1.01677 43.094%,
+          0.9766 50.995%,
+          1.00329 76.878%,
+          0.99996
+        );
+        --spring-duration: 1.333s;
+      }
+
+      body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .devil-evil {
+        width: 80px;
+        transition-property: transform;
+        transition-duration: var(--spring-duration);
+        transition-timing-function: var(--spring-easing);
+      }
+
+      .devil-evil:hover {
+        transform: translateY(-5vh);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="devil-evil">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M7.105 9.553a1 1 0 0 1 1.342-.448l2 1a1 1 0 0 1-.894 1.79l-2-1a1 1 0 0 1-.448-1.342zm8.448-.448-2 1a1 1 0 0 0 .894 1.79l2-1a1 1 0 1 0-.894-1.79zm-.328 5.263a4 4 0 0 1-6.45 0 1 1 0 0 0-1.55 1.264 6 6 0 0 0 9.55 0 1 1 0 1 0-1.55-1.264zM23 2v10a11 11 0 0 1-22 0V2a1 1 0 0 1 1.316-.949l4.229 1.41a10.914 10.914 0 0 1 10.91 0l4.229-1.41A1 1 0 0 1 23 2zm-2 10a9 9 0 1 0-9 9 9.029 9.029 0 0 0 9-9z"
+        />
+      </svg>
+    </div>
+
+    <div class="devil-evil">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M12 1a11 11 0 1 0 11 11A11.013 11.013 0 0 0 12 1zm0 20a9 9 0 1 1 9-9 9.01 9.01 0 0 1-9 9zm4.632-6.775a1 1 0 0 1 .143 1.407A6.036 6.036 0 0 1 12 18a1 1 0 0 1 0-2 4.045 4.045 0 0 0 3.225-1.632 1 1 0 0 1 1.407-.143zM18 8a1 1 0 0 1 1 1 4 4 0 0 1-4 4 2 2 0 0 1-2-2v-1h-2v1a2 2 0 0 1-2 2 4 4 0 0 1-4-4 1 1 0 0 1 1-1h4a1 1 0 0 1 1 1h2a1 1 0 0 1 1-1z"
+        />
+      </svg>
+    </div>
+
+    <div class="devil-evil">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M8 11V9a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0zm7 1a1 1 0 0 0 1-1V9a1 1 0 0 0-2 0v2a1 1 0 0 0 1 1zm8 0A11 11 0 1 1 12 1a11.013 11.013 0 0 1 11 11zm-2 0a9 9 0 1 0-9 9 9.01 9.01 0 0 0 9-9zm-9 1.782A3.044 3.044 0 0 0 10 13c-2 0-2 1.333-4 1.333 0 0 2 2.667 4 2.667a3.044 3.044 0 0 0 2-.782A3.044 3.044 0 0 0 14 17c2 0 4-2.667 4-2.667-2 0-2-1.333-4-1.333a3.044 3.044 0 0 0-2 .782z"
+        />
+      </svg>
+    </div>
+  </body>
+</html>

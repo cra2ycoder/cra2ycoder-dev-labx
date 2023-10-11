@@ -1,5 +1,5 @@
 {
-  "editor.fontFamily": "'Fira Code', 'Dank Mono', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": " 'Dank Mono', 'JetBrains Mono', 'Fira Cold', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 14,
   "editor.formatOnSave": true,
   "editor.accessibilityPageSize": 16,
