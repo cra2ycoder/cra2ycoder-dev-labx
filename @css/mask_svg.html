@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mask SVG</title>
+    <style>
+      :root {
+        --svg-icon-one: url(https://www.reshot.com/preview-assets/icons/YHG7MQX8L2/cool-sunglasses-YHG7MQX8L2.svg);
+        --svg-icon-two: url(https://www.reshot.com/preview-assets/icons/KALVM3F9DB/tongue-emoji-KALVM3F9DB.svg);
+        --svg-icon-three: url(https://www.reshot.com/preview-assets/icons/6UFEHGS8QD/mustache-man-6UFEHGS8QD.svg);
+      }
+
+      .icon {
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(#1c9fa4 25%, #36369b 75%);
+        margin: 2rem;
+      }
+
+      .one {
+        mask: var(--svg-icon-one) center / contain no-repeat;
+        -webkit-mask: var(--svg-icon-one) center / contain no-repeat;
+      }
+
+      .two {
+        mask: var(--svg-icon-two) center / contain no-repeat;
+        -webkit-mask: var(--svg-icon-two) center / contain no-repeat;
+      }
+
+      .three {
+        mask: var(--svg-icon-three) center / contain no-repeat;
+        -webkit-mask: var(--svg-icon-three) center / contain no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="icon one"></div>
+      <div class="icon two"></div>
+      <div class="icon three"></div>
+    </div>
+  </body>
+</html>
