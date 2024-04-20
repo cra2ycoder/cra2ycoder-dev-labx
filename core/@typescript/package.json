@@ -1,11 +1,14 @@
 {
-    "name": "@typescript/practices",
-    "version": "1.0.0",
-    "main": "index.ts",
-    "description": "",
-    "private": "true",
-    "scripts": {},
-    "keywords": [],
-    "author": "",
-    "license": "MIT"
-  }
+  "name": "@typescript/practices",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "description": "",
+  "private": "true",
+  "dependencies": {
+    "octokit": "3.1.2"
+  },
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
