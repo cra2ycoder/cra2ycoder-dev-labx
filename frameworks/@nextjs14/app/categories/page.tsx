@@ -11,11 +11,7 @@ export const metadata: Metadata = {
 }
 
 function MetaPage() {
-  return (
-    <>
-      <div>MetaPage</div>
-    </>
-  )
+  return <div>MetaPage</div>
 }
 
 export default MetaPage
