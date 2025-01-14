@@ -1,1 +1,5 @@
-module.exports = {}
+const devConfig = require('./development.config')
+
+module.exports = {
+  ...devConfig,
+}
