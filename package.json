@@ -3,13 +3,7 @@
   "version": "1.0.0",
   "description": "my fullstack tech-stack practices",
   "main": "index.js",
-  "devDependencies": {
-    "nodemon": "2.0.22",
-    "dotenv": "16.0.3",
-    "ts-node": "10.9.1",
-    "@types/node": "20.2.5",
-    "prettier": "2.8.8",
-    "typescript": "5.0.4",
+  "dependencies": {
     "@cypress/practices": "workspace:*",
     "@dsa/practices": "workspace:*",
     "@expressjs/practices": "workspace:*",
@@ -24,6 +18,14 @@
     "@puppeteer/practices": "workspace:*",
     "@sass/practices": "workspace:*",
     "@typescript/practices": "workspace:*"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.22",
+    "dotenv": "16.0.3",
+    "ts-node": "10.9.1",
+    "@types/node": "20.2.5",
+    "prettier": "2.8.8",
+    "typescript": "5.0.4"
   },
   "scripts": {},
   "repository": {
