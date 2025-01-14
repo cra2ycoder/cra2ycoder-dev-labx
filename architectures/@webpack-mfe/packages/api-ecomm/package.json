@@ -1,0 +1,16 @@
+{
+  "name": "api-ecomm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@tanstack/react-query": "5.64.1"
+  },
+  "devDependencies": {
+    "typescript": "^5"
+  },
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

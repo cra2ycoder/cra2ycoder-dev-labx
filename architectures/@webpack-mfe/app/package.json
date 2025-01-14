@@ -1,0 +1,15 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5",
+    "webpack-config": "workspace:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
