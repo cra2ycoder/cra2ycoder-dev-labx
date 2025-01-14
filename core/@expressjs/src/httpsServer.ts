@@ -11,8 +11,8 @@ const app = express()
 
 const PORT = process.env.NODE_HTTPS_PORT || 443
 
-const key = fs.readFileSync(path.resolve(__dirname, '../ssl/rootCA.key'))
-const cert = fs.readFileSync(path.resolve(__dirname, '../ssl/rootCA.crt'))
+const key = fs.readFileSync(path.resolve(__dirname, '../ssl/server.key'))
+const cert = fs.readFileSync(path.resolve(__dirname, '../ssl/server.crt'))
 
 const server = https.createServer(
   {

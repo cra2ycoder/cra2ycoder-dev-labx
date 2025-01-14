@@ -11,7 +11,7 @@ bash ./src/ssl/ssl.sh local.mohaa.com
 
 ## after key generated
 
-- simply copy the `rootCA.crt` & `rootCA.key` to your private folder
+- simply copy the `rootCA.crt` & `rootCA.key` to your private folder (if needed, replace with valid names)
 
 Note: ssl.sh bash scripts has only dummy info - if you wanted to have proper, that required to be updated
 
@@ -20,7 +20,11 @@ Note: ssl.sh bash scripts has only dummy info - if you wanted to have proper, th
 ## run the app
 
 ```sh
-yarn https-server
+# to run https server
+yarn server:https
+
+# to run http server
+yarn server:http
 ```
 
 - run `https://localhost`

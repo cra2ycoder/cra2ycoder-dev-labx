@@ -5,11 +5,11 @@
   "description": "",
   "private": "true",
   "dependencies": {
-    "express": "4.18.2"
+    "express": "4.21.2"
   },
   "scripts": {
-    "http-server": "tsc ./src/** --outDir ./dist && node ./dist/httpServer.js",
-    "https-server": "tsc ./src/** --outDir ./dist && node ./dist/httpsServer.js"
+    "server:http": "tsc ./src/** --outDir ./dist && node ./dist/httpServer.js",
+    "server:https": "tsc ./src/** --outDir ./dist && node ./dist/httpsServer.js"
   },
   "keywords": [],
   "author": "",
