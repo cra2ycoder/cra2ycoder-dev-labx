@@ -1,7 +1,6 @@
 packages:
   - 'core/*'
-  - 'framework/*'
-  - 'practices/*'
+  - 'frameworks/*'
   - 'states/*'
   - 'tests/*'
   - 'ui/*'

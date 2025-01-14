@@ -5,18 +5,15 @@
   "main": "index.js",
   "dependencies": {
     "@cypress/practices": "workspace:*",
-    "@dsa/practices": "workspace:*",
     "@expressjs/practices": "workspace:*",
     "@html/practices": "workspace:*",
-    "@javascript/practices": "workspace:*",
     "@jest/practices": "workspace:*",
-    "@logics/practices": "workspace:*",
     "@mobx/practices": "workspace:*",
     "@mongodb/practices": "workspace:*",
-    "@mui/practices": "workspace:*",
     "@nodejs/practices": "workspace:*",
     "@puppeteer/practices": "workspace:*",
     "@sass/practices": "workspace:*",
+    "@javascript/practices": "workspace:*",
     "@typescript/practices": "workspace:*"
   },
   "devDependencies": {
