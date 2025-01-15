@@ -1,5 +1,5 @@
 const path = require('path')
-const { getDevConfig } = require('webpack-config')
+const { getDevConfig } = require('@webpack/config')
 
 module.exports = getDevConfig({
   entryFile: path.resolve(__dirname, './index.tsx'),
@@ -19,6 +19,13 @@ module.exports = getDevConfig({
 
     // which code to be exposed to public to access via remoteEntry.js file
     exposes: {},
-    shared: ['react', 'react-dom', '@mui/material', '@mui/icons-material'],
+    shared: {
+      react: {
+        singleton: true,
+      },
+      'react-dom': {
+        singleton: true,
+      },
+    },
   },
 })

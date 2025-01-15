@@ -6,7 +6,7 @@ import { Header, Footer, PageLayout } from '@ui/components'
  *
  * @todo to be imported with mfe
  */
-// const HomePage = React.lazy(() => import('homepage/App'))
+const HomePage = React.lazy(() => import('homepage/App'))
 
 function Router() {
   return (

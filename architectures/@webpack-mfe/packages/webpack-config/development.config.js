@@ -8,6 +8,7 @@ module.exports = {
       mode: 'development',
       target: 'web',
       entry: options.entryFile,
+      cache: false,
       output: {
         path: options.outputPath,
         filename: options.exportFileNamePattern || '[name].bundle.js',

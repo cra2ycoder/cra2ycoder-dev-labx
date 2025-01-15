@@ -1,5 +1,5 @@
 const path = require('path')
-const { getDevConfig } = require('webpack-config')
+const { getDevConfig } = require('@webpack/config')
 
 module.exports = getDevConfig({
   entryFile: path.resolve(__dirname, './index.tsx'),
@@ -14,6 +14,13 @@ module.exports = getDevConfig({
     exposes: {
       './App': './App.tsx',
     },
-    shared: ['react', 'react-dom', '@mui/material', '@mui/icons-material'],
+    shared: {
+      react: {
+        singleton: true,
+      },
+      'react-dom': {
+        singleton: true,
+      },
+    },
   },
 })
