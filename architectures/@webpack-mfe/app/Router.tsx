@@ -1,6 +1,6 @@
 import { Suspense, StrictMode } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Header, Footer } from '@ui/components'
+import { Header, Footer, PageLayout } from '@ui/components'
 
 /**
  *
@@ -20,7 +20,9 @@ function Router() {
             path="/"
             element={
               <Suspense fallback={<div>Loading...</div>}>
-                <div>home page</div>
+                <PageLayout>
+                  <div>home page</div>
+                </PageLayout>
               </Suspense>
             }
           />
@@ -28,7 +30,9 @@ function Router() {
             path="/plp"
             element={
               <Suspense fallback={<div>Loading...</div>}>
-                <div>plp page</div>
+                <PageLayout>
+                  <div>plp page</div>
+                </PageLayout>
               </Suspense>
             }
           />
@@ -36,7 +40,9 @@ function Router() {
             path="/product"
             element={
               <Suspense fallback={<div>Loading...</div>}>
-                <div>product page</div>
+                <PageLayout>
+                  <div>product page</div>
+                </PageLayout>
               </Suspense>
             }
           />
@@ -44,7 +50,9 @@ function Router() {
             path="*"
             element={
               <Suspense fallback={<div>Loading...</div>}>
-                <div>not found!</div>
+                <PageLayout>
+                  <div>not found!</div>
+                </PageLayout>
               </Suspense>
             }
           />

@@ -165,7 +165,7 @@ function Header() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            Webpack Micro-Frontend
+            E-Commerce Micro-Frontend
           </Typography>
           <Search>
             <SearchIconWrapper>
