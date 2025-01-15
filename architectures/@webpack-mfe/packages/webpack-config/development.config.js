@@ -5,6 +5,7 @@ module.exports = {
   getDevConfig: options => {
     return {
       mode: 'development',
+      target: 'web',
       entry: options.entryFile,
       output: {
         path: options.outputPath,
@@ -22,8 +23,22 @@ module.exports = {
         rules: [
           {
             test: /\.tsx?$/,
-            use: 'ts-loader',
+            use: {
+              loader: 'babel-loader',
+              options: {
+                presets: [
+                  ['@babel/preset-env', { targets: 'defaults' }],
+                  '@babel/preset-typescript',
+                  '@babel/preset-react',
+                ],
+              },
+            },
             include: options.entryFile,
+            exclude: /node_modules/,
+          },
+          {
+            test: /\.tsx?$/,
+            loader: 'ts-loader',
             exclude: /node_modules/,
           },
         ],
