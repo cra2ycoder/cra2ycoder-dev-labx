@@ -1,5 +1,5 @@
 packages:
   - 'app'
-  - 'productlist'
+  - 'product-list'
   - 'product'
   - 'packages/*'
