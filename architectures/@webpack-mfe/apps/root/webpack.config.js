@@ -8,4 +8,17 @@ module.exports = getDevConfig({
   appHtml: path.resolve(__dirname, './index.html'),
   exportFileNamePattern: '[name].bundle.js',
   port: 3000,
+  microApp: {
+    name: 'root',
+    filename: 'remoteEntry.js',
+
+    // which apps to be consumed by the main apps
+    remotes: {
+      homepage: 'homepage@http://localhost:3001/remoteEntry.js',
+    },
+
+    // which code to be exposed to public to access via remoteEntry.js file
+    exposes: {},
+    shared: ['react', 'react-dom', '@mui/material', '@mui/icons-material'],
+  },
 })

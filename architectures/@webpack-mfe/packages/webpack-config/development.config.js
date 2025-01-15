@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
+const { ModuleFederationPlugin } = require('webpack').container
 
 module.exports = {
   getDevConfig: options => {
@@ -48,11 +49,14 @@ module.exports = {
         alias: {},
       },
       plugins: [
+        options.microApp &&
+          Object.keys(options.microApp).length &&
+          new ModuleFederationPlugin(options.microApp),
         new HtmlWebPackPlugin({
           template: options.appHtml,
           filename: 'index.html',
         }),
-      ],
+      ].filter(Boolean),
       optimization: {
         splitChunks: {
           chunks: 'async',

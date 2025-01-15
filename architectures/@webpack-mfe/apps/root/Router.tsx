@@ -1,4 +1,4 @@
-import { Suspense, StrictMode } from 'react'
+import React, { Suspense, StrictMode } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Header, Footer, PageLayout } from '@ui/components'
 
@@ -6,9 +6,7 @@ import { Header, Footer, PageLayout } from '@ui/components'
  *
  * @todo to be imported with mfe
  */
-// import HomePage from './pages/HomePage'
-// import ProductList from './pages/ProductList'
-// import Product from './pages/Product'
+// const HomePage = React.lazy(() => import('homepage/App'))
 
 function Router() {
   return (
@@ -21,7 +19,7 @@ function Router() {
             element={
               <Suspense fallback={<div>Loading...</div>}>
                 <PageLayout>
-                  <div>home page</div>
+                  <HomePage />
                 </PageLayout>
               </Suspense>
             }
