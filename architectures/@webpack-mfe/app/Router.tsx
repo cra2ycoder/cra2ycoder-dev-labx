@@ -1,6 +1,14 @@
 import { Suspense, StrictMode } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
+/**
+ *
+ * @todo to be imported with mfe
+ */
+// import HomePage from './pages/HomePage'
+// import ProductList from './pages/ProductList'
+// import Product from './pages/Product'
+
 function Router() {
   return (
     <StrictMode>
@@ -10,15 +18,15 @@ function Router() {
             path="/"
             element={
               <Suspense fallback={<div>Loading...</div>}>
-                <div>home</div>
+                <div>home page</div>
               </Suspense>
             }
           />
           <Route
-            path="/productlist"
+            path="/plp"
             element={
               <Suspense fallback={<div>Loading...</div>}>
-                <div>product-list</div>
+                <div>plp page</div>
               </Suspense>
             }
           />
@@ -26,7 +34,15 @@ function Router() {
             path="/product"
             element={
               <Suspense fallback={<div>Loading...</div>}>
-                <div>product</div>
+                <div>product page</div>
+              </Suspense>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <div>not found!</div>
               </Suspense>
             }
           />
