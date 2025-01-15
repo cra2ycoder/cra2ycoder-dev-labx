@@ -15,7 +15,7 @@ module.exports = {
         static: {
           directory: options.outputPath,
         },
-        open: true,
+        open: false,
         port: options.port || 3000,
         historyApiFallback: true,
       },
