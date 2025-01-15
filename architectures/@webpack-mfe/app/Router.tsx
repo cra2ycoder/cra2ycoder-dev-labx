@@ -1,5 +1,6 @@
 import { Suspense, StrictMode } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Header, Footer } from '@ui/components'
 
 /**
  *
@@ -12,6 +13,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 function Router() {
   return (
     <StrictMode>
+      <Header />
       <BrowserRouter>
         <Routes>
           <Route
@@ -48,6 +50,7 @@ function Router() {
           />
         </Routes>
       </BrowserRouter>
+      <Footer />
     </StrictMode>
   )
 }
