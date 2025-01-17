@@ -6,7 +6,7 @@
 .pnp.js
 node_modules
 .cached
-pnpm-lock.yml
+pnpm-lock.yaml
 
 # testing
 /coverage
