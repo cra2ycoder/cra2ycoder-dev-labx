@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Header, Footer, PageLayout } from '@ui/components'
 
 //remote Micro-frontend
-const HomePage = React.lazy(() => import('homepage/App'))
+const HomePage = React.lazy(() => import('home/App'))
+const ProductListPage = React.lazy(() => import('productlist/App'))
 
 function Router() {
   return (
@@ -26,7 +27,7 @@ function Router() {
             element={
               <Suspense fallback={<div>Loading...</div>}>
                 <PageLayout>
-                  <div>plp page</div>
+                  <ProductListPage />
                 </PageLayout>
               </Suspense>
             }

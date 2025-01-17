@@ -6,20 +6,17 @@ settings:
 
 importers:
 
-  app:
+  apps/home:
     dependencies:
+      '@ui/components':
+        specifier: workspace:*
+        version: link:../../packages/ui-components
       react:
         specifier: 19.0.0
         version: 19.0.0
       react-dom:
         specifier: 19.0.0
         version: 19.0.0(react@19.0.0)
-      react-router-dom:
-        specifier: 7.1.1
-        version: 7.1.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      ui-components:
-        specifier: workspace:*
-        version: link:../packages/ui-components
     devDependencies:
       '@babel/core':
         specifier: 7.26.0
@@ -48,6 +45,9 @@ importers:
       '@types/react-router-dom':
         specifier: 5.3.3
         version: 5.3.3
+      '@webpack/config':
+        specifier: workspace:*
+        version: link:../../packages/webpack-config
       babel-loader:
         specifier: 9.2.1
         version: 9.2.1(@babel/core@7.26.0)(webpack@5.97.1(webpack-cli@6.0.1))
@@ -63,9 +63,131 @@ importers:
       webpack-cli:
         specifier: ^6.0.1
         version: 6.0.1(webpack-dev-server@5.2.0)(webpack@5.97.1)
-      webpack-config:
+      webpack-dev-server:
+        specifier: ^5.2.0
+        version: 5.2.0(webpack-cli@6.0.1)(webpack@5.97.1)
+
+  apps/product-list:
+    dependencies:
+      '@ui/components':
         specifier: workspace:*
-        version: link:../packages/webpack-config
+        version: link:../../packages/ui-components
+      react:
+        specifier: 19.0.0
+        version: 19.0.0
+      react-dom:
+        specifier: 19.0.0
+        version: 19.0.0(react@19.0.0)
+    devDependencies:
+      '@babel/core':
+        specifier: 7.26.0
+        version: 7.26.0
+      '@babel/plugin-proposal-class-properties':
+        specifier: 7.18.6
+        version: 7.18.6(@babel/core@7.26.0)
+      '@babel/plugin-proposal-object-rest-spread':
+        specifier: 7.20.7
+        version: 7.20.7(@babel/core@7.26.0)
+      '@babel/preset-env':
+        specifier: 7.26.0
+        version: 7.26.0(@babel/core@7.26.0)
+      '@babel/preset-react':
+        specifier: 7.26.3
+        version: 7.26.3(@babel/core@7.26.0)
+      '@babel/preset-typescript':
+        specifier: 7.26.0
+        version: 7.26.0(@babel/core@7.26.0)
+      '@types/react':
+        specifier: 19.0.0
+        version: 19.0.0
+      '@types/react-dom':
+        specifier: 19.0.0
+        version: 19.0.0
+      '@types/react-router-dom':
+        specifier: 5.3.3
+        version: 5.3.3
+      '@webpack/config':
+        specifier: workspace:*
+        version: link:../../packages/webpack-config
+      babel-loader:
+        specifier: 9.2.1
+        version: 9.2.1(@babel/core@7.26.0)(webpack@5.97.1(webpack-cli@6.0.1))
+      ts-loader:
+        specifier: 9.5.2
+        version: 9.5.2(typescript@5.7.3)(webpack@5.97.1(webpack-cli@6.0.1))
+      typescript:
+        specifier: ^5
+        version: 5.7.3
+      webpack:
+        specifier: ^5.97.1
+        version: 5.97.1(webpack-cli@6.0.1)
+      webpack-cli:
+        specifier: ^6.0.1
+        version: 6.0.1(webpack-dev-server@5.2.0)(webpack@5.97.1)
+      webpack-dev-server:
+        specifier: ^5.2.0
+        version: 5.2.0(webpack-cli@6.0.1)(webpack@5.97.1)
+
+  apps/root:
+    dependencies:
+      '@ui/components':
+        specifier: workspace:*
+        version: link:../../packages/ui-components
+      react:
+        specifier: 19.0.0
+        version: 19.0.0
+      react-dom:
+        specifier: 19.0.0
+        version: 19.0.0(react@19.0.0)
+      react-router-dom:
+        specifier: 7.1.1
+        version: 7.1.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+    devDependencies:
+      '@babel/core':
+        specifier: 7.26.0
+        version: 7.26.0
+      '@babel/plugin-proposal-class-properties':
+        specifier: 7.18.6
+        version: 7.18.6(@babel/core@7.26.0)
+      '@babel/plugin-proposal-object-rest-spread':
+        specifier: 7.20.7
+        version: 7.20.7(@babel/core@7.26.0)
+      '@babel/preset-env':
+        specifier: 7.26.0
+        version: 7.26.0(@babel/core@7.26.0)
+      '@babel/preset-react':
+        specifier: 7.26.3
+        version: 7.26.3(@babel/core@7.26.0)
+      '@babel/preset-typescript':
+        specifier: 7.26.0
+        version: 7.26.0(@babel/core@7.26.0)
+      '@types/react':
+        specifier: 19.0.0
+        version: 19.0.0
+      '@types/react-dom':
+        specifier: 19.0.0
+        version: 19.0.0
+      '@types/react-router-dom':
+        specifier: 5.3.3
+        version: 5.3.3
+      '@webpack/config':
+        specifier: workspace:*
+        version: link:../../packages/webpack-config
+      babel-loader:
+        specifier: 9.2.1
+        version: 9.2.1(@babel/core@7.26.0)(webpack@5.97.1(webpack-cli@6.0.1))
+      ts-loader:
+        specifier: 9.5.2
+        version: 9.5.2(typescript@5.7.3)(webpack@5.97.1(webpack-cli@6.0.1))
+      typescript:
+        specifier: ^5
+        version: 5.7.3
+      webpack:
+        specifier: ^5.97.1
+        version: 5.97.1(webpack-cli@6.0.1)
+      webpack-cli:
+        specifier: ^6.0.1
+        version: 6.0.1(webpack-dev-server@5.2.0)(webpack@5.97.1)
       webpack-dev-server:
         specifier: ^5.2.0
         version: 5.2.0(webpack-cli@6.0.1)(webpack@5.97.1)

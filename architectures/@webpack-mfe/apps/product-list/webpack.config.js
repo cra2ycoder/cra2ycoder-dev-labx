@@ -7,19 +7,16 @@ module.exports = getDevConfig({
   excludeNodeModules: path.resolve(__dirname, 'node_modules'),
   appHtml: path.resolve(__dirname, './index.html'),
   exportFileNamePattern: '[name].bundle.js',
-  port: 3000,
+  port: 3002,
   microApp: {
-    name: 'root',
+    name: 'productlist',
     filename: 'remoteEntry.js',
-
-    // which apps to be consumed by the main apps
-    remotes: {
-      home: 'home@http://localhost:3001/remoteEntry.js',
-      productlist: 'productlist@http://localhost:3002/remoteEntry.js',
+    exposes: {
+      './App': './App.tsx',
     },
-
-    // which code to be exposed to public to access via remoteEntry.js file
-    exposes: {},
+    remotes: {
+      root: 'root@http://localhost:3000/remoteEntry.js',
+    },
     shared: {
       react: {
         singleton: true,

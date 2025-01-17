@@ -1,1 +1,1 @@
-declare module 'homepage/App'
+declare module 'home/App'

@@ -9,7 +9,7 @@ module.exports = getDevConfig({
   exportFileNamePattern: '[name].bundle.js',
   port: 3001,
   microApp: {
-    name: 'homepage',
+    name: 'home',
     filename: 'remoteEntry.js',
     exposes: {
       './App': './App.tsx',
