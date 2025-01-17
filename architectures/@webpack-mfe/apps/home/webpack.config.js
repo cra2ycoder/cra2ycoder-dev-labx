@@ -20,9 +20,11 @@ module.exports = getDevConfig({
     shared: {
       react: {
         singleton: true,
+        eager: true,
       },
       'react-dom': {
         singleton: true,
+        eager: true,
       },
     },
   },

@@ -2,10 +2,7 @@ import React, { Suspense, StrictMode } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Header, Footer, PageLayout } from '@ui/components'
 
-/**
- *
- * @todo to be imported with mfe
- */
+//remote Micro-frontend
 const HomePage = React.lazy(() => import('homepage/App'))
 
 function Router() {
