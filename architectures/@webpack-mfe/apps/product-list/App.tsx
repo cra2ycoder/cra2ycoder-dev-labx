@@ -1,10 +1,11 @@
-import { ProductCard } from '@ui/components'
+import { APIProvider } from '@api/ecomm'
+import ProductList from './components/ProductList'
 
 function App() {
   return (
-    <div>
-      <ProductCard />
-    </div>
+    <APIProvider>
+      <ProductList />
+    </APIProvider>
   )
 }
 
