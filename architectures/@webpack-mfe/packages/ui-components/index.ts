@@ -1,1 +1,5 @@
-export * from './src'
+export * from './src/Logo'
+export * from './src/Header'
+export * from './src/Footer'
+export * from './src/ProductCard'
+export * from './src/PageLayout'

@@ -1,5 +1,11 @@
+import { ProductCard } from '@ui/components'
+
 function App() {
-  return <div>Product List Page from MFE</div>
+  return (
+    <div>
+      <ProductCard />
+    </div>
+  )
 }
 
 export { App }
