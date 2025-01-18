@@ -2,14 +2,14 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 
-function ProductCard() {
+function ProductCard(props: any) {
   return (
-    <Box>
-      <img src="" alt="" />
-      <Typography>Product Title</Typography>
-      <Typography>Product Desc</Typography>
-      <Typography>Product category</Typography>
-      <Typography>Product Price</Typography>
+    <Box sx={{ width: '100%' }}>
+      <img src={props.image} alt={props.title} style={{ width: '100%' }} />
+      <Typography>{props.title}</Typography>
+      {/* <Typography>{props.description.substr(0, 10)}</Typography> */}
+      <Typography>{props.category}</Typography>
+      <Typography>{props.price}</Typography>
       <Button variant="contained" color="primary">
         Add to Cart
       </Button>
