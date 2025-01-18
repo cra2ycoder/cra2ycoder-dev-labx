@@ -1,7 +1,7 @@
 {
   "name": "@api/ecomm",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "dependencies": {
     "@tanstack/react-query": "5.64.1"
   },
