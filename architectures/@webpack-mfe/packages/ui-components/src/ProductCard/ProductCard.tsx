@@ -57,7 +57,12 @@ function ProductCard(props: any) {
             paddingLeft: '0.4rem',
           }}
         />
-        <Typography variant="caption">{props.rating.count} Reviews</Typography>
+        <Typography
+          variant="caption"
+          sx={{ fontWeight: 'bold', color: '#5f5b5b' }}
+        >
+          {props.rating.count} Reviews
+        </Typography>
       </Stack>
       <Stack
         direction="column"
@@ -67,9 +72,19 @@ function ProductCard(props: any) {
           flexGrow: 1,
         }}
       >
-        <Typography variant="h6">{props.title}</Typography>
-        <Chip label={props.category} sx={{ width: 'max-content' }} />
-        <Typography variant="h5">${props.price}</Typography>
+        <Typography variant="h6" sx={{ fontWeight: '400', color: '#27282b' }}>
+          {props.title}
+        </Typography>
+        <Chip
+          label={props.category}
+          sx={{ width: 'max-content', color: '#888' }}
+        />
+        <Typography
+          variant="h4"
+          sx={{ paddingTop: '1rem', fontWeight: '400', color: '#27282b' }}
+        >
+          ${props.price}
+        </Typography>
       </Stack>
       {/* <Button variant="contained" color="primary">
         Add to Cart
