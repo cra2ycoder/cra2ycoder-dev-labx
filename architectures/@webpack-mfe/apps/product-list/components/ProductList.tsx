@@ -11,7 +11,7 @@ function ProductList() {
   }, [])
 
   return (
-    <Grid container spacing={4}>
+    <Grid container spacing={2}>
       {productApi.state.data &&
         productApi.state.data.map((item: any, index: number) => (
           <Grid size={{ xs: 2, sm: 4, md: 2, lg: 2 }}>
