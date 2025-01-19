@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box'
+import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button'
+// import Button from '@mui/material/Button'
 import Paper from '@mui/material/Paper'
 import Chip from '@mui/material/Chip'
 import StarIcon from '@mui/icons-material/Star'
@@ -33,10 +34,9 @@ function ProductCard(props: any) {
           style={{ maxWidth: '100%', maxHeight: '100%' }}
         />
       </Box>
-      <Box
+      <Stack
+        direction="row"
         sx={{
-          display: 'flex',
-          flexDirection: 'row',
           justifyContent: 'space-between',
           alignItems: 'center',
           marginBottom: '1rem',
@@ -55,12 +55,11 @@ function ProductCard(props: any) {
           }}
         />
         <Typography variant="caption">{props.rating.count} Reviews</Typography>
-      </Box>
-      <Box
+      </Stack>
+      <Stack
+        direction="column"
+        spacing={1}
         sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '0.5rem',
           height: '100%',
           flexGrow: 1,
         }}
@@ -68,7 +67,7 @@ function ProductCard(props: any) {
         <Typography variant="h6">{props.title}</Typography>
         <Chip label={props.category} sx={{ width: 'max-content' }} />
         <Typography variant="h5">${props.price}</Typography>
-      </Box>
+      </Stack>
       {/* <Button variant="contained" color="primary">
         Add to Cart
       </Button> */}

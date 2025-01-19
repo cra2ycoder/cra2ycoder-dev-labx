@@ -14,7 +14,7 @@ function ProductList() {
     <Grid container spacing={2}>
       {productApi.state.data &&
         productApi.state.data.map((item: any, index: number) => (
-          <Grid size={{ xs: 2, sm: 4, md: 2, lg: 2 }}>
+          <Grid size={{ xs: 6, sm: 4, md: 3, lg: 2 }}>
             <ProductCard key={`product-${index}`} {...item} />
           </Grid>
         ))}
