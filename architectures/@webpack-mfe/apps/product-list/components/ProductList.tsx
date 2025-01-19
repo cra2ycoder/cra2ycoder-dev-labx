@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
+import Grid from '@mui/material/Grid2'
 import { useProductApi } from '@api/ecomm'
 import { ProductCard } from '@ui/components'
-import Grid from '@mui/material/Grid2'
 
 function ProductList() {
   const productApi = useProductApi() as any

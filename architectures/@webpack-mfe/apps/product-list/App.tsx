@@ -1,10 +1,13 @@
 import { APIProvider } from '@api/ecomm'
+import { MUIThemeProvider } from '@ui/components'
 import ProductList from './components/ProductList'
 
 function App() {
   return (
     <APIProvider>
-      <ProductList />
+      <MUIThemeProvider>
+        <ProductList />
+      </MUIThemeProvider>
     </APIProvider>
   )
 }
