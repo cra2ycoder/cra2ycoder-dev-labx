@@ -1,7 +1,11 @@
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 // import { orange } from '@mui/material/colors'
 
-const theme = createTheme({})
+const theme = createTheme({
+  typography: {
+    fontFamily: 'DM Sans',
+  },
+})
 
 type TThemeProvider = {
   children: React.ReactNode

@@ -25,6 +25,8 @@ const Search = styled('div')(({ theme }) => ({
   marginRight: theme.spacing(2),
   marginLeft: 0,
   width: '100%',
+  display: 'flex',
+  flexGrow: 1,
   [theme.breakpoints.up('sm')]: {
     marginLeft: theme.spacing(3),
     width: 'auto',
@@ -148,7 +150,7 @@ function Header() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar>
+      <AppBar elevation={2}>
         <Toolbar>
           <IconButton
             size="large"

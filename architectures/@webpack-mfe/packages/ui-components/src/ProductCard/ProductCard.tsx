@@ -9,6 +9,8 @@ import StarIcon from '@mui/icons-material/Star'
 function ProductCard(props: any) {
   return (
     <Paper
+      elevation={0}
+      square={true}
       sx={{
         width: '100%',
         height: '100%',
@@ -16,6 +18,7 @@ function ProductCard(props: any) {
         boxSizing: 'border-box',
         display: 'flex',
         flexDirection: 'column',
+        // border: '1px solid #e3e3e3',
       }}
     >
       <Box
