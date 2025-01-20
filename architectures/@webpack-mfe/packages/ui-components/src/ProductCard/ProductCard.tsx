@@ -1,43 +1,13 @@
-import { useState } from 'react'
-import Box from '@mui/material/Box'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 // import Button from '@mui/material/Button'
 import Paper from '@mui/material/Paper'
 import Chip from '@mui/material/Chip'
 import StarIcon from '@mui/icons-material/Star'
-import CircularProgress from '@mui/material/CircularProgress'
+import Image from '../Image'
+
 // import { AnimatePresence } from 'motion/react'
 import * as motion from 'motion/react-client'
-
-function ProductImage(props: any) {
-  const [isImageLoading, setIsImageLoading] = useState(true)
-
-  return (
-    <Box
-      sx={{
-        width: '100%',
-        height: '15rem',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '220px',
-        marginBottom: '1rem',
-      }}
-    >
-      {isImageLoading && <CircularProgress />}
-      <img
-        src={props.image}
-        alt={props.title}
-        loading="lazy"
-        style={{ maxWidth: '100%', maxHeight: '100%' }}
-        onLoad={() => {
-          setIsImageLoading(false)
-        }}
-      />
-    </Box>
-  )
-}
 
 function ProductCard(props: any) {
   return (
@@ -66,7 +36,7 @@ function ProductCard(props: any) {
           cursor: 'pointer',
         }}
       >
-        <ProductImage {...props} />
+        <Image {...props} />
         <Stack
           direction="row"
           sx={{

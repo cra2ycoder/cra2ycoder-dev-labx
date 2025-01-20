@@ -2,14 +2,14 @@ import { useEffect } from 'react'
 import Grid from '@mui/material/Grid2'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import { useProductApi } from '@api/ecomm'
+import { useProductListApi } from '@api/ecomm'
 import {
   ProductCard,
   ProductCardSkeleton,
 } from '@ui/components/src/ProductCard'
 
 function ProductList() {
-  const productApi = useProductApi() as any
+  const productApi = useProductListApi() as any
 
   useEffect(() => {
     productApi.actions.getAllProducts()

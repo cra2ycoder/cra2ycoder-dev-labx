@@ -1,25 +1,19 @@
 import { useQuery } from '@tanstack/react-query'
 
-function useProductApi(props: any) {
-  const { productId } = props
-
+function useProductListApi() {
   const api = useQuery({
-    queryKey: ['one-product', productId],
-    enabled: !!productId,
+    queryKey: ['products'],
     queryFn: async () => {
-      const response = await fetch(
-        `https://fakestoreapi.com/products/${productId}`,
-        {
-          method: 'GET',
-        }
-      )
+      const response = await fetch('https://fakestoreapi.com/products', {
+        method: 'GET',
+      })
       return response.json()
     },
     staleTime: 1000 * 60 * 5, // 5 minutes
     refetchInterval: 1000 * 60 * 5, // 5 minutes
   })
 
-  const getProduct = () => {
+  const getAllProducts = () => {
     // productApi
     api.refetch()
   }
@@ -32,10 +26,10 @@ function useProductApi(props: any) {
       error: api.error,
     },
     actions: {
-      getProduct,
+      getAllProducts,
     },
   }
 }
 
-export { useProductApi }
-export default useProductApi
+export { useProductListApi }
+export default useProductListApi
