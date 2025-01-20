@@ -20,7 +20,9 @@ function ProductList() {
           productApi.state.data.map((item: any, index: number) => (
             <Grid
               size={{ xs: 6, sm: 4, md: 3, lg: 2 }}
-              sx={{ border: '1px solid #e3e3e3' }}
+              sx={{
+                border: '1px solid #e3e3e3',
+              }}
             >
               <ProductCard key={`product-${index}`} {...item} />
             </Grid>
