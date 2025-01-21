@@ -8,14 +8,14 @@ import {
   ProductCardSkeleton,
 } from '@ui/components/src/ProductCard'
 
-function ProductList() {
+function ProductList(props: any) {
   const productApi = useProductListApi() as any
+
+  const data = productApi.state.data || Array(10).fill(0)
 
   useEffect(() => {
     productApi.actions.getAllProducts()
   }, [])
-
-  const data = productApi.state.data || Array(10).fill(0)
 
   return (
     <Stack spacing={2}>
@@ -34,9 +34,15 @@ function ProductList() {
                 border: '1px solid #e3e3e3',
               }}
             >
-              {productApi.state.isLoading && <ProductCardSkeleton />}
+              {productApi.state.isLoading && (
+                <ProductCardSkeleton key={`product-${index}-skeleton`} />
+              )}
               {!productApi.state.isLoading && (
-                <ProductCard key={`product-${index}`} {...item} />
+                <ProductCard
+                  key={`product-${index}`}
+                  {...item}
+                  onClick={props.onClick}
+                />
               )}
             </Grid>
           ))}

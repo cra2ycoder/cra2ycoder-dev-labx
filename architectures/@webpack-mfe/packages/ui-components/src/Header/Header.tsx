@@ -3,7 +3,7 @@ import Toolbar from '@mui/material/Toolbar'
 import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import TextField from '@mui/material/TextField'
+import InputBase from '@mui/material/InputBase'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined'
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined'
@@ -16,12 +16,15 @@ function Header() {
           E-Commerce Store
         </Typography>
         <Box sx={{ width: '50%' }}>
-          <TextField
-            id="standard-basic"
-            label="Search for products, category and more"
-            variant="filled"
-            size="small"
-            sx={{ width: '100%' }}
+          <InputBase
+            sx={{
+              width: '100%',
+              height: '40px',
+              backgroundColor: 'white',
+              padding: '0 1rem',
+              borderRadius: '4px',
+            }}
+            placeholder="Search for Products, Categories, and more"
           />
         </Box>
         <Stack direction="row" spacing={4}>

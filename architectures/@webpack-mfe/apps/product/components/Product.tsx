@@ -7,9 +7,9 @@ import Button from '@mui/material/Button'
 import { useProductApi } from '@api/ecomm'
 import { Image } from '@ui/components'
 
-function Product() {
-  const productId = 3
-  const productApi = useProductApi({ productId }) as any
+function Product(props: any) {
+  const { pathParams } = props
+  const productApi = useProductApi({ productId: pathParams?.id }) as any
 
   const data = productApi.state.data || {}
 

@@ -35,6 +35,9 @@ function ProductCard(props: any) {
           flexDirection: 'column',
           cursor: 'pointer',
         }}
+        onClick={() => {
+          props.onClick(props.id)
+        }}
       >
         <Image {...props} />
         <Stack

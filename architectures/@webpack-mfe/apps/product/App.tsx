@@ -2,11 +2,13 @@ import { APIProvider } from '@api/ecomm'
 import { MUIThemeProvider } from '@ui/components'
 import Product from './components/Product'
 
-function App() {
+function App(props: any) {
+  const pathParams = props?.useParams()
+
   return (
     <APIProvider>
       <MUIThemeProvider>
-        <Product />
+        <Product pathParams={pathParams} />
       </MUIThemeProvider>
     </APIProvider>
   )
