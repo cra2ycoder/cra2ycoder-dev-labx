@@ -1,18 +1,22 @@
-import AppBar from '@mui/material/AppBar'
+import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 
 function Footer() {
   return (
-    <AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
-      <Typography
-        variant="body2"
-        noWrap
-        component="div"
-        sx={{ display: { xs: 'none', sm: 'block', textAlign: 'center' } }}
-      >
-        2025 Copyrights. All rights reserved.
+    <Box
+      sx={{
+        borderTop: '1px solid #e3e3e3',
+        height: '47px',
+        justifyContent: 'center',
+        display: 'flex',
+        alignItems: 'center',
+      }}
+      component="footer"
+    >
+      <Typography noWrap variant="caption">
+        © 2025 E-Commerce MFE. All rights reserved.
       </Typography>
-    </AppBar>
+    </Box>
   )
 }
 

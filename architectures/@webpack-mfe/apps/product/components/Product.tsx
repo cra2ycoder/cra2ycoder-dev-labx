@@ -1,6 +1,4 @@
-import { useEffect } from 'react'
 import Grid from '@mui/material/Grid2'
-import Box from '@mui/material/Box'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import Chip from '@mui/material/Chip'
@@ -22,15 +20,26 @@ function Product() {
       direction="column"
       sx={{ marginTop: '10rem' }}
     >
-      <Stack spacing={4} direction="row">
-        <Stack width="50%" sx={{ borderRight: '1px solid #e3e3e3' }}>
+      <Grid container spacing={4}>
+        <Grid
+          sx={{
+            borderRight: {
+              md: '1px solid #e3e3e3',
+              lg: '1px solid #e3e3e3',
+              xs: 'none',
+              sm: 'none',
+            },
+            position: 'relative',
+          }}
+          size={{ xs: 12, sm: 12, md: 6, lg: 6 }}
+        >
           <Image image={data.image} height="470px" minHeight="470px" />
-        </Stack>
-        <Box width="50%">
+        </Grid>
+        <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6 }}>
           <Stack
             spacing={2}
-            width="75%"
-            // justifyContent={'space-between'}
+            sx={{ width: { xs: '100%', sm: '100%', md: '75%', lg: '75%' } }}
+            justifyContent={'space-between'}
             height="100%"
           >
             <Chip
@@ -83,8 +92,8 @@ function Product() {
               </Button>
             </Stack>
           </Stack>
-        </Box>
-      </Stack>
+        </Grid>
+      </Grid>
     </Stack>
   )
 }
