@@ -83,7 +83,10 @@ function ProductCard(props: any) {
             variant="h4"
             sx={{ paddingTop: '1rem', fontWeight: '400', color: '#27282b' }}
           >
-            ${props.price}
+            $
+            {String(props.price).indexOf('.') > 0
+              ? props.price
+              : `${props.price}.00`}
           </Typography>
         </Stack>
         {/* <Button variant="contained" color="primary">
