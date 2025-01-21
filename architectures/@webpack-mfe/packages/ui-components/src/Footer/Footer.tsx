@@ -13,7 +13,7 @@ function Footer() {
       }}
       component="footer"
     >
-      <Typography noWrap variant="caption">
+      <Typography noWrap variant="caption" sx={{ color: '#686868' }}>
         © 2025 E-Commerce MFE. All rights reserved.
       </Typography>
     </Box>
