@@ -8,7 +8,7 @@ import { useProductApi } from '@api/ecomm'
 import { Image } from '@ui/components'
 
 function Product() {
-  const productId = 1
+  const productId = 3
   const productApi = useProductApi({ productId }) as any
 
   const data = productApi.state.data || {}
@@ -18,7 +18,7 @@ function Product() {
       spacing={4}
       width="100%"
       direction="column"
-      sx={{ marginTop: '10rem' }}
+      sx={{ marginTop: { lg: '10rem', md: '10rem' } }}
     >
       <Grid container spacing={4}>
         <Grid
@@ -39,7 +39,7 @@ function Product() {
           <Stack
             spacing={2}
             sx={{ width: { xs: '100%', sm: '100%', md: '75%', lg: '75%' } }}
-            justifyContent={'space-between'}
+            justifyContent="space-between"
             height="100%"
           >
             <Chip
@@ -53,7 +53,7 @@ function Product() {
             <Stack
               direction="row"
               sx={{
-                justifyContent: 'space-between',
+                // justifyContent: 'space-between',
                 alignItems: 'center',
                 marginBottom: '1rem',
               }}
@@ -72,7 +72,11 @@ function Product() {
               />
               <Typography
                 variant="caption"
-                sx={{ fontWeight: 'bold', color: '#5f5b5b' }}
+                sx={{
+                  fontWeight: 'bold',
+                  color: '#5f5b5b',
+                  marginLeft: '1rem',
+                }}
               >
                 {data.rating?.count} Reviews
               </Typography>

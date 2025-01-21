@@ -5,7 +5,7 @@ function PageLayout({ children }: any) {
     <Box
       component="main"
       sx={{
-        padding: '5rem 1rem',
+        padding: '5rem 1.5rem',
         overflowX: 'hidden',
         overflowY: 'auto',
         minHeight: 'calc(100vh - 13rem)',

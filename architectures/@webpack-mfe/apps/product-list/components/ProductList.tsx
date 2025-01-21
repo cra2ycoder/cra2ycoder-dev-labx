@@ -19,7 +19,12 @@ function ProductList() {
 
   return (
     <Stack spacing={2}>
-      <Typography variant="h4">All Products</Typography>
+      <Typography
+        variant="h4"
+        sx={{ fontWeight: 200, paddingTop: '1rem', paddingBottom: '1rem' }}
+      >
+        All Products ({data.length} items)
+      </Typography>
       <Grid container>
         {data &&
           data.map((item: any, index: number) => (

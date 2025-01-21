@@ -16,7 +16,7 @@ function ProductCard(props: any) {
       whileHover={{
         scale: 1.05,
         y: -10,
-        boxShadow: '0px 1rem 2rem rgba(0, 0, 0, 0.4)',
+        boxShadow: '0px 1rem 1.5rem  rgba(0, 0, 0, 0.4)',
       }}
       whileTap={{
         scale: 1,
