@@ -6,6 +6,7 @@ import StarIcon from '@mui/icons-material/Star'
 import Button from '@mui/material/Button'
 import { useProductApi } from '@api/ecomm'
 import { Image } from '@ui/components'
+import * as motion from 'motion/react-client'
 
 function Product(props: any) {
   const { pathParams } = props
@@ -88,12 +89,34 @@ function Product(props: any) {
                 : `${data?.price}.00`}
             </Typography>
             <Stack direction="row" spacing={4}>
-              <Button variant="contained" color="primary" sx={{ width: '50%' }}>
-                Add to Cart
-              </Button>
-              <Button variant="outlined" color="primary" sx={{ width: '50%' }}>
-                Add to Wishlist
-              </Button>
+              <motion.div
+                style={{ width: '50%' }}
+                whileTap={{
+                  scale: 1.1,
+                }}
+              >
+                <Button
+                  variant="contained"
+                  color="primary"
+                  sx={{ width: '100%' }}
+                >
+                  Add to Cart
+                </Button>
+              </motion.div>
+              <motion.div
+                style={{ width: '50%' }}
+                whileTap={{
+                  scale: 1.1,
+                }}
+              >
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  sx={{ width: '100%' }}
+                >
+                  Add to Wishlist
+                </Button>
+              </motion.div>
             </Stack>
           </Stack>
         </Grid>
