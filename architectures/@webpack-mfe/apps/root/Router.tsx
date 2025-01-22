@@ -1,5 +1,5 @@
 import React, { Suspense, StrictMode } from 'react'
-import { Routes, Route, useNavigate, useParams } from 'react-router'
+import { Routes, Route, useNavigate, useParams, Outlet } from 'react-router'
 import { Header, Footer, PageLayout } from '@ui/components'
 
 //remote Micro-frontend
@@ -13,48 +13,31 @@ function Router() {
   return (
     <StrictMode>
       <Header />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route
+            path="/"
+            element={
               <PageLayout>
-                <HomePage />
+                <Outlet />
               </PageLayout>
-            </Suspense>
-          }
-        />
-        <Route
-          path="/plp"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <PageLayout>
-                <ProductListPage navigateTo={navigateTo} />
-              </PageLayout>
-            </Suspense>
-          }
-        />
-        <Route
-          path="/product/:id"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <PageLayout>
+            }
+          >
+            <Route index element={<HomePage />} />
+            <Route
+              path="/plp"
+              element={<ProductListPage navigateTo={navigateTo} />}
+            />
+            <Route
+              path="/product/*"
+              element={
                 <ProductPage navigateTo={navigateTo} useParams={useParams} />
-              </PageLayout>
-            </Suspense>
-          }
-        />
-        <Route
-          path="*"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <PageLayout>
-                <div>not found!</div>
-              </PageLayout>
-            </Suspense>
-          }
-        />
-      </Routes>
+              }
+            />
+            <Route path="*" element={<div>page not found</div>} />
+          </Route>
+        </Routes>
+      </Suspense>
       <Footer />
     </StrictMode>
   )
