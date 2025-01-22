@@ -3,7 +3,7 @@ import { MUIThemeProvider } from '@ui/components'
 import Product from './components/Product'
 
 function App(props: any) {
-  const pathParams = props?.useParams()
+  const pathParams = props?.useParams?.()
 
   return (
     <APIProvider>
