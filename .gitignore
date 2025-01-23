@@ -7,6 +7,8 @@
 node_modules
 .cached
 pnpm-lock.yaml
+**/pnpm-lock.yaml
+**/**pnpm-lock.yaml
 
 # testing
 /coverage
@@ -42,4 +44,3 @@ next-env.d.ts
 
 **/__pycache__
 **/.idea
-/**/pnpm-lock.yaml
