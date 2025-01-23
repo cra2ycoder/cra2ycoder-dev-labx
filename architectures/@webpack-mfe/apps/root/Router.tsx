@@ -29,7 +29,7 @@ function Router() {
               element={<ProductListPage navigateTo={navigateTo} />}
             />
             <Route
-              path="/product/*"
+              path="/product/:id"
               element={
                 <ProductPage navigateTo={navigateTo} useParams={useParams} />
               }

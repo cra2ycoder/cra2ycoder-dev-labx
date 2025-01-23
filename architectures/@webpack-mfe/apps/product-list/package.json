@@ -4,13 +4,15 @@
   "main": "index.ts",
   "scripts": {
     "run:dev": "webpack serve --config webpack.config.js",
-    "run:build": "webpack build --config webpack.config.js --stats-children"
+    "run:build": "webpack build --config webpack.config.js --stats-children",
+    "cy:open": "cypress open"
   },
   "dependencies": {
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "@mui/material": "6.3.1",
     "@mui/icons-material": "6.3.1",
+    "cypress": "14.0.0",
     "@api/ecomm": "workspace:*",
     "@ui/components": "workspace:*"
   },
