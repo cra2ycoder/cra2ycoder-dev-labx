@@ -39,5 +39,16 @@ const charLengthLimit = /a{2}/
 // minimum one `a` and can be repeated 'n' of times
 const charNoLengthLimit = /a{1,}/
 
+// minimum one `a` and maximum `3` times
+const charWithMinMaxLengthLimit = /a{1,3}/
+
 console.log(charLengthLimit.test(stringToBeMatched)) // false
 console.log(charNoLengthLimit.test(stringToBeMatched)) // true
+
+// any character - can be letter(s) or number(s) or special characters
+const anyCharacter = /./
+console.log(anyCharacter.test(stringToBeMatched)) // true
+
+// only allow the within the a, b, c and d
+const onlyOrBasedCharacter = /a|b|c|d/
+console.log(onlyOrBasedCharacter.test(stringToBeMatched)) // true
