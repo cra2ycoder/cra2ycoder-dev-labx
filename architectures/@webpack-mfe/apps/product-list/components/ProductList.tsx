@@ -25,7 +25,7 @@ function ProductList(props: any) {
       >
         All Products ({data.length} items)
       </Typography>
-      <Grid container>
+      <Grid container data-cy="product-list">
         {data &&
           data.map((item: any, index: number) => (
             <Grid
@@ -33,6 +33,7 @@ function ProductList(props: any) {
               sx={{
                 border: '1px solid #e3e3e3',
               }}
+              data-cy="product-item"
             >
               {productApi.state.isLoading && (
                 <ProductCardSkeleton key={`product-${index}-skeleton`} />

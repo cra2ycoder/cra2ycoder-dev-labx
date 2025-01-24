@@ -9,5 +9,12 @@ describe('template spec', () => {
 
     cy.wait(4000)
     cy.get('.MuiInputBase-input').as('SearchInputBox').type(`men's clothing`)
+
+    cy.get(
+      '[data-cy="product-list"] > [data-cy="product-item"]:first-child'
+    ).click()
+
+    cy.wait(2000)
+    cy.reload()
   })
 })
