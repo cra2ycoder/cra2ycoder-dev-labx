@@ -28,12 +28,15 @@ function Router() {
               path="/plp"
               element={<ProductListPage navigateTo={navigateTo} />}
             />
-            <Route
-              path="/product/:id"
-              element={
-                <ProductPage navigateTo={navigateTo} useParams={useParams} />
-              }
-            />
+            <Route path="product">
+              <Route
+                index
+                path=":id"
+                element={
+                  <ProductPage navigateTo={navigateTo} useParams={useParams} />
+                }
+              />
+            </Route>
             <Route path="*" element={<div>page not found</div>} />
           </Route>
         </Routes>
