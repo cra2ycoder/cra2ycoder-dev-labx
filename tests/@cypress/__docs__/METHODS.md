@@ -1,4 +1,5 @@
-## Cypress APIs
+
+## Methods
 
 - `.visit()`
 - `.get()`
@@ -44,3 +45,4 @@ cy.origin("https://www.abc.com",() =>
     cy.get("selector a[href*='about']").click();
 })
 ```
+

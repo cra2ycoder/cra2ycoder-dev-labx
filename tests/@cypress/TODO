@@ -1,0 +1,10 @@
+- [] build a page with the following support
+    - list of checkboxes
+    - list of radio buttons
+    - autocomplete
+    - window.alert, prompt and confirm
+    - show and hide the element based on the button clicks
+    - mouse hover
+    - tables
+    - select / dropdown
+    - browser new tab opening (child window testing)
