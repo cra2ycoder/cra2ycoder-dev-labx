@@ -12,3 +12,6 @@
     - iframe
     - child window
     - new tab
+    - loading fixtures
+    - Class objects to split the test cases => `pageObjects`
+    - custom cypress commands => `support > commands.js

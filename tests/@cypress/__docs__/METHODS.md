@@ -28,6 +28,12 @@
 - `prop()`
 - `url()`
 - `wrap()`
+- `filter()`
+- `fixture()`
+- `before()`
+- `wrap()`
+- `pause()`
+- `log()`
 
 ```javascript
 // alert window
@@ -115,4 +121,19 @@ describe('Calendar test', () => {
     })
   })
 })
+```
+
+```js
+// before() used to do something before test starting
+before(function () {
+  cy.fixture('filename').then((data)=> {
+
+    // assigning the data to global access
+    this.data = data
+  })
+})
+```
+
+```js
+Cypress.config('defaultCommandTimout', 10000); // default value is 4000
 ```
