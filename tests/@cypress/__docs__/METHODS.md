@@ -126,8 +126,7 @@ describe('Calendar test', () => {
 ```js
 // before() used to do something before test starting
 before(function () {
-  cy.fixture('filename').then((data)=> {
-
+  cy.fixture('filename').then(data => {
     // assigning the data to global access
     this.data = data
   })
@@ -135,5 +134,104 @@ before(function () {
 ```
 
 ```js
-Cypress.config('defaultCommandTimout', 10000); // default value is 4000
+Cypress.config('defaultCommandTimout', 10000) // default value is 4000
+```
+
+```js
+Cyprees.env('apiDomain')
+```
+
+```s
+# running the test cases with the chrome browser through terminal commands
+npm cypress run --spec cypress/integration/examples/filename.js --headed --browser chrome --env apiDomain="https://xyz.com"
+```
+
+```js
+// cypress.config.ts
+export default defineConfig({
+  reporter: 'cypress-mochawesome-reporter',
+  e2e: {
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+      require('cypress-mochawesome-reporter/plugin')(on)
+    },
+  },
+})
+
+// cypress/support/e2e.ts
+import 'cypress-mochawesome-reporter/register'
+```
+
+```js
+{
+  retries: {
+    runMode: 1,
+  }
+}
+```
+
+```js
+const { defineConfig } = require('cypress')
+const browserify = require('@cypress/browserify-preprocessor')
+const {
+  addCucumberPreprocessorPlugin,
+} = require('@badeball/cypress-cucumber-preprocessor')
+const {
+  preprendTransformerToOptions,
+} = require('@badeball/cypress-cucumber-preprocessor/browserify')
+
+async function setupNodeEvents(on, config) {
+  await addCucumberPreprocessorPlugin(on, config)
+
+  on(
+    'file:preprocessor',
+    browserify(preprendTransformerToOptions(config, browserify.defaultOptions))
+  )
+
+  // Make sure to return the config object as it might have been modified by the plugin.
+  return config
+}
+
+module.exports = defineConfig({
+  defaultCommandTimeout: 6000,
+
+  env: {
+    url: 'https://rahulshettyacademy.com',
+  },
+  reporter: 'cypress-mochawesome-reporter',
+
+  retries: {
+    runMode: 1,
+  },
+  projectId: 'nodpcq',
+
+  e2e: {
+    setupNodeEvents,
+    specPattern: 'cypress/integration/examples/*.js',
+  },
+})
+```
+
+## jenkins installation
+
+- reference: `https://www.jenkins.io/download/lts/macos/`
+
+```sh
+#install
+brew install jenkins-lts
+
+#start
+brew services start jenkins-lts
+
+#restart 
+brew services restart jenkins-lts
+
+#update
+brew upgrade jenkins-lts
+```
+
+## install plugins at jenkins
+
+```
+Node.js
 ```

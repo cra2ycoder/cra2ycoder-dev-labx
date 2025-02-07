@@ -15,3 +15,8 @@
     - loading fixtures
     - Class objects to split the test cases => `pageObjects`
     - custom cypress commands => `support > commands.js
+    - env variables (passing cli command and config based)
+    - opening the chrome using cli commands
+    - report generator with `npm install -D cypress-mochawesome-reporter`
+    - cypress cloud dashboard (report page)
+    - retries (when fails or flaky results)
