@@ -20,7 +20,9 @@ module.exports = getDevConfig({
     },
 
     // which code to be exposed to public to access via remoteEntry.js file
-    exposes: {},
+    exposes: {
+      './App': './App.tsx',
+    },
     shared: {
       react: {
         singleton: true,

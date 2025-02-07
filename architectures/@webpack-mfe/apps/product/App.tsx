@@ -1,18 +1,15 @@
 import { APIProvider } from '@api/ecomm'
 import { MUIThemeProvider } from '@ui/components'
-import Product from './components/Product'
+import Router from './Router'
 
-function App(props: any) {
-  const pathParams = props?.useParams?.()
-
+function App() {
   return (
     <APIProvider>
       <MUIThemeProvider>
-        <Product pathParams={pathParams} />
+        <Router />
       </MUIThemeProvider>
     </APIProvider>
   )
 }
 
-export { App }
 export default App

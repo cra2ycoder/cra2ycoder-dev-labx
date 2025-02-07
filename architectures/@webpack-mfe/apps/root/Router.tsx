@@ -10,6 +10,8 @@ const ProductPage = React.lazy(() => import('product/App'))
 function Router() {
   const navigateTo = useNavigate()
 
+  console.log('coming')
+
   return (
     <StrictMode>
       <Header />
@@ -28,15 +30,12 @@ function Router() {
               path="/plp"
               element={<ProductListPage navigateTo={navigateTo} />}
             />
-            <Route path="product">
-              <Route
-                index
-                path=":id"
-                element={
-                  <ProductPage navigateTo={navigateTo} useParams={useParams} />
-                }
-              />
-            </Route>
+            <Route
+              path="/product/*"
+              element={
+                <ProductPage navigateTo={navigateTo} useParams={useParams} />
+              }
+            />
             <Route path="*" element={<div>page not found</div>} />
           </Route>
         </Routes>

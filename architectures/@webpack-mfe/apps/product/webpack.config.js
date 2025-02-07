@@ -14,9 +14,7 @@ module.exports = getDevConfig({
     exposes: {
       './App': './App.tsx',
     },
-    remotes: {
-      root: 'root@http://localhost:3000/remoteEntry.js',
-    },
+    remotes: {},
     shared: {
       react: {
         singleton: true,
