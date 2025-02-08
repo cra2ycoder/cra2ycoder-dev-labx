@@ -235,3 +235,47 @@ brew upgrade jenkins-lts
 ```
 Node.js
 ```
+
+## installing cucumber framework
+
+https://cucumber.io/
+https://www.npmjs.com/package/cypress-cucumber-preprocessor
+
+- Scenario:
+  - Given:
+  - When:
+    - And:
+  - Then:
+
+```s
+npm install @badeball/cypress-cucumber-preprocessor
+npm install @cypress/browserify-preprocessor
+```
+
+IMPORTANT:
+`Please note that if you use arrow functions, you won’t be able to share state between steps!`
+configuration update: https://github.com/badeball/cypress-cucumber-preprocessor/blob/master/examples/browserify-cjs/cypress.config.js
+
+```js
+// when there is NO this depedency
+When('description', () => {
+  // test cases
+  // here, this object will not work properly
+  // this.ClassObject.doSomething() // this will fail
+})
+
+// when there is this depedency
+When('description', function() {
+  // test cases
+  // this.ClassObject.doSomething()
+})
+```
+
+- test with fixtures (`Scenario Outline`)
+- test categorize `@Smoke, @Regression`
+- cucumber html report => `cucumber-json-formatter` (https://github.com/badeball/cypress-cucumber-preprocessor/blob/master/docs/json-report.md)
+- https://github.com/badeball/cypress-cucumber-preprocessor/blob/master/docs/html-report.md
+  
+```s
+npm install -D multiple-cucumber-html-report
+```
