@@ -34,6 +34,7 @@
 - `wrap()`
 - `pause()`
 - `log()`
+- task
 
 ```javascript
 // alert window
@@ -223,7 +224,7 @@ brew install jenkins-lts
 #start
 brew services start jenkins-lts
 
-#restart 
+#restart
 brew services restart jenkins-lts
 
 #update
@@ -265,7 +266,7 @@ When('description', () => {
 })
 
 // when there is this depedency
-When('description', function() {
+When('description', function () {
   // test cases
   // this.ClassObject.doSomething()
 })
@@ -275,7 +276,129 @@ When('description', function() {
 - test categorize `@Smoke, @Regression`
 - cucumber html report => `cucumber-json-formatter` (https://github.com/badeball/cypress-cucumber-preprocessor/blob/master/docs/json-report.md)
 - https://github.com/badeball/cypress-cucumber-preprocessor/blob/master/docs/html-report.md
-  
+
 ```s
 npm install -D multiple-cucumber-html-report
+```
+
+## Intercept to Manage HTTP Request (\*\*important topic to paly with)
+
+[READ](https://docs.cypress.io/api/commands/intercept#__docusaurus_skipToContent_fallback)
+
+```js
+cy.intercept(requestObj, responseObj)
+
+cy.intercept({
+  method:'GET',
+  url: 'https://xyz.com/api/endpoint',
+}, {
+  statusCode: 200,
+  body: [{...}]
+}).as('@ApiMock')
+
+cy.wait('@ApiMock').then(({req, res}) => {
+  cy.get('tr').should('have.length', res.body.length)
+})
+```
+
+- changing the response object
+
+```js
+/// <reference types="Cypress" />
+
+describe('My First Test Suite', function () {
+  it('My FirstTest case', function () {
+    cy.visit('https://rahulshettyacademy.com/angularAppdemo/')
+
+    cy.intercept(
+      {
+        method: 'GET',
+        url: 'https://rahulshettyacademy.com/Library/GetBook.php?AuthorName=shetty',
+      },
+
+      {
+        statusCode: 200,
+        body: [
+          {
+            book_name: 'RestAssured with Java',
+            isbn: 'RSU',
+            aisle: '2301',
+          },
+        ],
+      }
+    ).as('bookretrievals')
+    cy.get("button[class='btn btn-primary']").click()
+    cy.wait('@bookretrievals').then(({ request, response }) => {
+      cy.get('tr').should('have.length', response.body.length + 1)
+    })
+    cy.get('p').should('have.text', 'Oops only 1 Book available')
+
+    //length of the response array = rows of the table
+  })
+})
+```
+
+- changing request body
+
+```js
+cy.intercept('GET', 'https://xyz.api.com/', req => {
+  req.url = 'https://abc.api.com/'
+
+  req.continue(res => {
+    // do somethig
+  })
+}).as('@ApiRequestMock')
+```
+
+```js
+/// <reference types="Cypress" />
+
+describe('My First Test Suite', function () {
+  it('My FirstTest case', function () {
+    cy.visit('https://rahulshettyacademy.com/angularAppdemo/')
+
+    cy.intercept(
+      'GET',
+      'https://rahulshettyacademy.com/Library/GetBook.php?AuthorName=shetty',
+      req => {
+        req.url =
+          'https://rahulshettyacademy.com/Library/GetBook.php?AuthorName=malhotra'
+
+        req.continue(res => {
+          // expect(res.statusCode).to.equal(403)
+        })
+      }
+    ).as('dummyUrl')
+
+    cy.get("button[class='btn btn-primary']").click()
+    cy.wait('@dummyUrl')
+  })
+})
+```
+
+## making a mock without browser support
+
+```js
+cy.request('POST', 'https://zyx.api.com', { id: 122 }).then(res => {
+  // do assertion
+})
+```
+
+# injecting JWT token into browser (cookies/localStorage/sessionStorage)
+
+```js
+// use to get the server file loction
+Cypress.config('fileServerFolder')
+
+cy.readFile(
+  Cypress.config('fileServerFolder') +
+    '/cypress/downloads/order-invoice_rahul.csv'
+)
+.then(async text => {
+  const csv = await neatCSV(text)
+  console.log(csv)
+
+  const actualProductCSV = csv[0]['Product Name']
+  expect(productName).to.equal(actualProductCSV)
+})
 ```
