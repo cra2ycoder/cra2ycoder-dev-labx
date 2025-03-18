@@ -3,6 +3,7 @@
 async function submitFormNow(event: React.FormEvent<HTMLFormElement>) {
   const SUBMIT_URL = 'https://www.greatfrontend.com/api/questions/contact-form'
   event.preventDefault()
+
   const form: HTMLFormElement = event.target
 
   try {
@@ -37,9 +38,6 @@ async function submitFormNow(event: React.FormEvent<HTMLFormElement>) {
 }
 
 function ContactForm() {
-  // Ignore the onSubmit prop, it's used by GFE to
-  // intercept the form submit event to check your solution.
-  // onSubmit={submitForm}
   return (
     <form
       action="https://www.greatfrontend.com/api/questions/contact-form"
