@@ -38,7 +38,7 @@ server.post('/todo', (req, res) => {
     res
       .status(400)
       .json({
-        message: `Error: ${userInput.task} is already found. Please try with new task.`,
+        message: `Error: "${userInput.task}" is already found. Please try with new task.`,
       })
       .end()
   }
@@ -57,7 +57,7 @@ server.delete('/todo/:id', (req, res) => {
     res
       .status(400)
       .json({
-        message: `Requested task ${taskId} is not found in the list`,
+        message: `Requested task "${taskId}" is not found in the list`,
       })
       .end()
   }
@@ -78,7 +78,7 @@ server.put('/todo/:id', (req, res) => {
     res
       .status(400)
       .json({
-        message: `requested task id: ${taskId} is not exist in the list for an update.`,
+        message: `requested task id: "${taskId}" is not exist in the list for an update.`,
       })
       .end()
   }
@@ -100,7 +100,7 @@ server.put('/todo/:id', (req, res) => {
     res
       .status(400)
       .json({
-        message: `Duplicate entry: ${userInput.task} is already found.`,
+        message: `Duplicate entry: "${userInput.task}" is already found.`,
       })
       .end()
   }
@@ -112,7 +112,40 @@ server.put('/todo/:id', (req, res) => {
 })
 
 // update (only specific property in the object)
-server.patch('/todo/:id', (req, res) => {})
+server.patch('/todo/:id', (req, res) => {
+  const taskId = req.params.id
+  const taskIndexAtList = taskList.findIndex(x => x.id.toString() === taskId)
+
+  if (taskIndexAtList === -1) {
+    res
+      .status(400)
+      .json({
+        message: `requested task id: "${taskId}" is not exist in the list for an update.`,
+      })
+      .end()
+  }
+
+  const userInput = req.body
+  const isAlreadyFound = taskList.find(x => x.task === userInput.task)
+
+  if (isAlreadyFound) {
+    res
+      .status(400)
+      .json({
+        message: `Duplicate entry: "${userInput.task}" is already found.`,
+      })
+      .end()
+  }
+
+  taskList[taskIndexAtList] = {
+    ...taskList[taskIndexAtList],
+    ...userInput,
+  }
+
+  res.status(200).json({
+    message: `${taskId} successfully updated.`,
+  })
+})
 
 server.listen(API_PORT, () => {
   console.info(`API server is running at http://localhost:${API_PORT}`)
