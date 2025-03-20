@@ -7,9 +7,15 @@
   "dependencies": {
     "express": "4.21.2"
   },
+  "devDependencies": {
+    "nodemon": "3.1.9",
+    "@types/express": "5.0.1"
+  },
   "scripts": {
     "server:http": "tsc ./src/** --outDir ./dist && node ./dist/httpServer.js",
-    "server:https": "tsc ./src/** --outDir ./dist && node ./dist/httpsServer.js"
+    "server:https": "tsc ./src/** --outDir ./dist && node ./dist/httpsServer.js",
+    "compile": "tsc -w ./api/** --outDir ./dist",
+    "dev": "nodemon ./dist/todo.js"
   },
   "keywords": [],
   "author": "",
