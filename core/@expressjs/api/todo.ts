@@ -13,7 +13,7 @@ const taskList = []
  */
 // read
 server.get('/todo', (req, res) => {
-  res.status(200).send({
+  res.status(200).json({
     message: taskList.length === 0 ? 'no tasks found.' : '',
     list: taskList,
   })
@@ -26,7 +26,7 @@ server.post('/todo', (req, res) => {
   if (!userInput.task) {
     res
       .status(400)
-      .send({
+      .json({
         message: 'Error: task property is must.',
       })
       .end()
@@ -37,7 +37,7 @@ server.post('/todo', (req, res) => {
   if (isAlreadyFound) {
     res
       .status(400)
-      .send({
+      .json({
         message: `Error: ${userInput.task} is already found. Please try with new task.`,
       })
       .end()
@@ -45,7 +45,7 @@ server.post('/todo', (req, res) => {
 
   userInput.id = taskList.length
   taskList.push(userInput)
-  res.status(201).send(userInput)
+  res.status(201).json(userInput)
 })
 
 // delete
@@ -56,7 +56,7 @@ server.delete('/todo/:id', (req, res) => {
   if (taskIndexAtList === -1) {
     res
       .status(400)
-      .send({
+      .json({
         message: `Requested task ${taskId} is not found in the list`,
       })
       .end()
@@ -64,7 +64,7 @@ server.delete('/todo/:id', (req, res) => {
 
   taskList.splice(taskIndexAtList, 1)
 
-  res.status(200).send({
+  res.status(200).json({
     message: `${taskId} task deleted successfully!`,
   })
 })
@@ -77,8 +77,8 @@ server.put('/todo/:id', (req, res) => {
   if (taskIndexAtList === -1) {
     res
       .status(400)
-      .send({
-        message: `request ${taskId} is not exist in the list for update.`,
+      .json({
+        message: `requested task id: ${taskId} is not exist in the list for an update.`,
       })
       .end()
   }
@@ -88,7 +88,7 @@ server.put('/todo/:id', (req, res) => {
   if (!userInput.task) {
     res
       .status(400)
-      .send({
+      .json({
         message: 'Error: task property is must.',
       })
       .end()
@@ -99,11 +99,16 @@ server.put('/todo/:id', (req, res) => {
   if (isAlreadyFound) {
     res
       .status(400)
-      .send({
+      .json({
         message: `Duplicate entry: ${userInput.task} is already found.`,
       })
       .end()
   }
+
+  taskList[taskIndexAtList] = userInput
+  res.status(200).json({
+    message: `${taskId} successfully updated.`,
+  })
 })
 
 // update (only specific property in the object)
