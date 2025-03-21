@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Basics of HTML5</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Basics of HTML5" />
+  </head>
+  <body>
+    <!-- collapsing spaces -->
+    <p>This is a {` ` }paragraph!</p>
+    <!-- html entities -->
+    <!-- works -->
+    <p><>/&</p>
+    <!-- fails -->
+    <!-- <p><to-be-test>/&</p> -->
+    <!-- solution -->
+    <p>&lt;to-be-test&gt;/&amp;</p>
+
+    <ul>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+    </ul>
+    <ol>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+    </ol>
+    <dl>
+      <dt>detailed list title</dt>
+      <dd>data of an item</dd>
+      <dt>detailed list title</dt>
+      <dd>data of an item</dd>
+    </dl>
+    <form action="/upload" method="POST" enctype="text/plain">
+      <!-- enctype -->
+      <!-- 1. text/plain
+        2. multipart/form-data
+        3. application/x-www-form-urlencoded -->
+    </form>
+    <div style="display: flex; flex-direction: row; gap: 2rem">
+      <i>italic</i>
+      <b>bold</b>
+      <strong>makes text important for SEO</strong>
+      <em>italic but make importance to semantics</em>
+      <ins>added text</ins>
+      <mark>highlights as marking</mark>
+      <sub>subscript text</sub>
+      <sup>superscript text</sup>
+      <big>make its bigger</big>
+      <small>make its smaller</small>
+      <del>show as deleted</del>
+    </div>
+  </body>
+</html>
