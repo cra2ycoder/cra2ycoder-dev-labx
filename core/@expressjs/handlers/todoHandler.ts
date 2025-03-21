@@ -1,6 +1,6 @@
 export const taskList = []
 
-export function readAllTask(req, res) {
+export async function readAllTask(req, res) {
   res.status(200).json({
     message: taskList.length === 0 ? 'no tasks found.' : '',
     list: taskList,
@@ -8,6 +8,7 @@ export function readAllTask(req, res) {
 }
 
 export function createTask(req, res) {
+export async function createTask(req, res) {
   const userInput = req.body
 
   if (!userInput.task) {
@@ -29,7 +30,7 @@ export function createTask(req, res) {
   res.status(201).json(userInput)
 }
 
-export function deleteTask(req, res) {
+export async function deleteTask(req, res) {
   const taskId = req.params.id
   const taskIndexAtList = taskList.findIndex(x => x.id?.toString() === taskId)
 
@@ -46,7 +47,7 @@ export function deleteTask(req, res) {
   })
 }
 
-export function updateTask(req, res) {
+export async function updateTask(req, res) {
   const taskId = req.params.id
   const taskIndexAtList = taskList.findIndex(x => x.id.toString() === taskId)
 
@@ -78,7 +79,7 @@ export function updateTask(req, res) {
   })
 }
 
-export function updateTaskItem(req, res) {
+export async function updateTaskItem(req, res) {
   const taskId = req.params.id
   const taskIndexAtList = taskList.findIndex(x => x.id.toString() === taskId)
 

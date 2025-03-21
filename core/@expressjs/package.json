@@ -5,7 +5,10 @@
   "description": "",
   "private": "true",
   "dependencies": {
-    "express": "4.21.2"
+    "express": "4.21.2",
+    "bcrypt": "5.1.1",
+    "jsonwebtoken": "9.0.2",
+    "dotenv": "16.4.7"
   },
   "devDependencies": {
     "nodemon": "3.1.9",
@@ -15,7 +18,7 @@
     "server:http": "tsc ./src/** --outDir ./dist && node ./dist/httpServer.js",
     "server:https": "tsc ./src/** --outDir ./dist && node ./dist/httpsServer.js",
     "compile": "tsc -w ./api/** --outDir ./dist",
-    "dev": "nodemon ./dist/todo.js"
+    "dev": "nodemon ./dist/api/auth.js"
   },
   "keywords": [],
   "author": "",
