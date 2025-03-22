@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data Table with Division</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .table-pr {
+        display: table;
+        width: 40%;
+        border: 1px solid grey;
+        border-collapse: collapse;
+      }
+
+      .table-header {
+        display: table-header-group;
+        font-weight: bold;
+      }
+
+      .table-column-group {
+        display: table-column-group;
+      }
+
+      .table-row {
+        display: table-row;
+      }
+
+      .table-cell {
+        display: table-cell;
+        border: 1px solid grey;
+      }
+
+      .table-caption {
+        display: table-caption;
+        caption-side: bottom;
+      }
+
+      .colspan {
+        width: inherit;
+      }
+
+      .table-column-group > div {
+        display: table-column;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Table with Display CSS Properties</h1>
+    <div class="table-pr">
+      <div class="table-header">
+        <div class="table-cell">Title 1</div>
+        <div class="table-cell">Title 2</div>
+        <div class="table-cell">Title 3</div>
+      </div>
+      <div class="table-column-group">
+        <div></div>
+        <div span="1" style="background-color: red"></div>
+        <div span="1" style="background-color: yellow"></div>
+      </div>
+      <div class="table-row">
+        <div class="table-cell">Item 1</div>
+        <div class="table-cell">Item 2</div>
+        <div class="table-cell">Item 3</div>
+      </div>
+      <div class="table-row">
+        <div class="table-cell">Item 1</div>
+        <div class="table-cell">Item 2</div>
+        <div class="table-cell">Item 3</div>
+      </div>
+      <div class="table-row">
+        <div class="table-cell">Item 1</div>
+        <div class="table-cell">Item 2</div>
+        <div class="table-cell">Item 3</div>
+      </div>
+      <div class="table-row">
+        <div class="table-cell">Value 1</div>
+        <div class="table-cell colspan"></div>
+        <div class="table-cell">Value 3</div>
+      </div>
+      <div class="table-caption">Sample table data</div>
+    </div>
+  </body>
+</html>
