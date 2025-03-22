@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Meta Information</title>
+
+    <!-- Meta -->
+    <!-- content encoding -->
+    <meta charset="UTF-8" />
+
+    <!-- for controlling responsive of the page -->
+    <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+
+    <!-- content of the page -->
+    <meta name="description" content="This page all about meta" />
+
+    <!-- deprecated -->
+    <meta name="keywords" content="html, html5, meta" />
+
+    <!-- preventing robots to not crawl -->
+    <meta name="robots" content="noindex, nofollow" />
+
+    <!-- allowing robots to crawl the page -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- auto refresh on every 5secs -->
+    <!-- <meta http-equiv="refresh" content="5;" /> -->
+
+    <!-- auto refresh after 10s and it will be redirected -->
+    <!-- <meta http-equiv="refresh"
+    content="10;http://localhost:3000/forms/index.html" -->
+
+    <!-- sets compatibility mode for specific browser -->
+    <meta name="X-UA-Compatible" content="IE=edge" />
+
+    <!-- controls caching behavior of a page -->
+    <!-- best of dynamic page -->
+    <!-- when we use CDNs this is not recommended -->
+    <meta name="cache-control" content="no-cache, no-store, must-revalidate" />
+
+    <!-- enabling browser cache for 1hr (3600s) -->
+    <!-- <meta name="Cache-Control" content="public, max-age=3600" /> -->
+
+    <!-- setting expires of the page -->
+    <meta name="Expires" content="Wed, 21 Mar 2030 07:28:00 GMT" />
+
+    <!-- Enhances security by controlling allowed content sources -->
+
+    <!-- should allow only same origin assets/resources like, scripts, images, css, etc.., -->
+    <!-- self: same origin, same domain, or current deployed domain -->
+    <meta name="Content-Security-Policy" content="default-src 'self'" />
+
+    <!-- security risk: unsafe-inline unsafe-eval we have to use nonce -->
+    <meta
+      name="Content-Security-Policy"
+      content=" 
+        default-src 'self'; 
+        script-src 'self' *.abc.com nonce-ABC123xyz==;  // rule for script assets
+        style-src 'self' *.abc.com nonce-ABC123xyz==;  // rule for style assets & link
+        image-src 'self' *.abc.com;  // rule for image assets
+        font-src 'self' *.abc.com;   // rule for font assets 
+        frame-src 'self' *.abc.com; // rule for iframes
+        connect-src 'self' *.abc.com; //rule for fetchAPI, XHR, websocks (connection apps) etc.,
+        object-src 'none' // rule for <object> <embed> <applet> -> security risk
+      "
+    />
+
+    <!-- open graph meta tags -->
+    <!-- social media visibility -->
+    <!-- sharing: platforms like Facebook, Twitter, LinkedIn, or WhatsApp -->
+    <meta
+      property="og:title"
+      content="The Ultimate Web Development Guide 2024"
+    />
+    <meta
+      property="og:description"
+      content="Master modern web technologies with our in-depth guide!"
+    />
+    <meta property="og:image" content="https://example.com/webdev-guide.jpg" />
+    <meta property="og:url" content="https://example.com/webdev-guide" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="CodeMaster Blog" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- twitter specific meta data for social media visibility -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="The Ultimate Web Development Guide 2024"
+    />
+    <meta
+      name="twitter:description"
+      content="Master modern web technologies with our in-depth guide!"
+    />
+    <meta name="twitter:image" content="https://example.com/webdev-guide.jpg" />
+    <meta name="twitter:site" content="@CodeMasterBlog" />
+
+    <script nonce="ABC123xyz==">
+      console.log('Secure script')
+    </script>
+    <style nonce="ABC123xyz==">
+      body {
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>All About HTML Meta</h1>
+  </body>
+</html>
