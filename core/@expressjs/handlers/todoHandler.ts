@@ -7,7 +7,6 @@ export async function readAllTask(req, res) {
   })
 }
 
-export function createTask(req, res) {
 export async function createTask(req, res) {
   const userInput = req.body
 
