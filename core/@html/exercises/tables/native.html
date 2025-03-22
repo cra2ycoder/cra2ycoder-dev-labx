@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Table Examples</title>
+    <meta charset="UTF-8" />
+    <style>
+      table {
+        border: 1px solid grey;
+        border-collapse: collapse;
+        width: 40%;
+      }
+
+      td,
+      th {
+        border: 1px solid grey;
+        margin: 0;
+        padding: 0;
+      }
+      caption {
+        caption-side: bottom;
+      }
+      td {
+        padding: 0.8rem;
+      }
+
+      /** */
+      .table-pr {
+        display: table;
+        width: 40%;
+        border: 1px solid grey;
+        border-collapse: collapse;
+      }
+
+      .table-header {
+        display: table-header-group;
+        font-weight: bold;
+      }
+
+      .table-row-group {
+        display: table-row-group;
+      }
+
+      .table-row {
+        display: table-row;
+      }
+
+      .table-cell {
+        display: table-cell;
+        border: 1px solid grey;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Table with Native Elements</h1>
+    <table>
+      <caption>
+        sample data table
+      </caption>
+      <colgroup>
+        <col />
+        <col span="1" style="background-color: red" />
+        <col span="1" style="background-color: yellow" />
+      </colgroup>
+      <thead>
+        <th>Title 1</th>
+        <th>Title 2</th>
+        <th>Title 3</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>item 1</td>
+          <td>item 2</td>
+          <td>item 3</td>
+        </tr>
+        <tr>
+          <td>item 1</td>
+          <td>item 2</td>
+          <td>item 3</td>
+        </tr>
+        <tr>
+          <td>item 1</td>
+          <td>item 2</td>
+          <td>item 3</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2">value 1</td>
+          <td>value 3</td>
+        </tr>
+      </tfoot>
+    </table>
+    <hr />
+    <h2>Table with Display CSS Properties</h2>
+    <div class="table-pr">
+      <div class="table-header">
+        <div class="table-cell">Title 1</div>
+        <div class="table-cell">Title 2</div>
+        <div class="table-cell">Title 3</div>
+      </div>
+      <div class="table-row-group">
+        <div class="table-row">
+          <div class="table-cell">Item 1</div>
+          <div class="table-cell">Item 2</div>
+          <div class="table-cell">Item 3</div>
+        </div>
+        <div class="table-row">
+          <div class="table-cell">Item 1</div>
+          <div class="table-cell">Item 2</div>
+          <div class="table-cell">Item 3</div>
+        </div>
+        <div class="table-row">
+          <div class="table-cell">Item 1</div>
+          <div class="table-cell">Item 2</div>
+          <div class="table-cell">Item 3</div>
+        </div>
+        <div class="table-row">
+          <div class="table-col-group">
+            <div class="table-cell" colspan="2">Value 1</div>
+            <div class="table-cell">Value 3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
