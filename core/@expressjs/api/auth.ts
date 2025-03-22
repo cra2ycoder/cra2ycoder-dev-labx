@@ -36,6 +36,12 @@ apiServer.post('/signin', signInHandler)
 apiServer.get('/profile', authMiddleware, profileHandler)
 apiServer.post('/logout', logoutHandler)
 
+// global error handler
+apiServer.use((error, req, res, next) => {
+  console.error(error.stack)
+  res.status(500).send('something went wrong!')
+})
+
 apiServer.listen(4001, () => {
   console.log(`API Server is listening to ${API_PORT} >>>>`)
 })

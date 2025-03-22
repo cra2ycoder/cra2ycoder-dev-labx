@@ -32,6 +32,12 @@ server.put('/todo/:id', updateTask)
 // update (only specific property in the object)
 server.patch('/todo/:id', updateTaskItem)
 
+// global error handler
+server.use((error, req, res, next) => {
+  console.error(error.stack)
+  res.status(500).send('something went wrong!')
+})
+
 server.listen(API_PORT, () => {
   console.info(`API server is running at http://localhost:${API_PORT}`)
 })
