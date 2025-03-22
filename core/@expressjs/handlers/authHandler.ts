@@ -14,6 +14,11 @@ export async function signUpInHandler(req, res) {
   }
 
   // password to be encrypted properly before storing it
+  /**
+   * @description
+   * 1. user password must be hash (encrypted)
+   * 2. then to be stored
+   */
   const hashedPassword = await bcrypt?.hash(userCredentials.password, 10)
 
   users.push({
@@ -37,6 +42,10 @@ export async function signInHandler(req, res) {
     return
   }
 
+  /**
+   * @description
+   * 1. password to be compared via bcrypt.compare()
+   */
   const isPasswordMatching = await bcrypt.compare(
     userCredentials.password,
     userInfo.password
@@ -49,6 +58,12 @@ export async function signInHandler(req, res) {
     return
   }
 
+  /**
+   * @description
+   * 1. user token will be generated with jwt only with username (not with password)
+   * 2. must need expires time
+   *
+   */
   // jwt token generation
   const jwtToken = jwt.sign(
     { username: userInfo.username },
@@ -68,6 +83,14 @@ export async function getProfileHandler(req, res) {
   })
 }
 
+/**
+ * @description
+ * auth middleware is more important to track the jwt token session
+ * @param req
+ * @param res
+ * @param next
+ * @returns
+ */
 export async function authMiddleware(req, res, next) {
   const jwtTokenFromHeaders = req.headers['x-auth-key']
 
