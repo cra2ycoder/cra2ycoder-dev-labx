@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Forms</title>
+    <style>
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        width: 400px;
+        gap: 1rem;
+      }
+
+      label {
+        width: 100%;
+        display: flex;
+        /* align-items: center; */
+      }
+
+      fieldset {
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      span {
+        display: inline-block;
+        width: 80px;
+      }
+
+      input {
+        height: 1.5rem;
+      }
+
+      button {
+        width: 100px;
+        height: 2.5rem;
+      }
+
+      textarea {
+        height: 100px;
+      }
+
+      input,
+      textarea {
+        display: flex;
+        flex-grow: 2;
+      }
+
+      .buttons {
+        display: flex;
+        width: 100%;
+        justify-content: end;
+        gap: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Post Your Comments</h1>
+    <form
+      action="http://localhost:3000/api/comments"
+      method="POST"
+      enctype="application/x-www-form-urlencoded"
+      target="_self"
+    >
+      <fieldset>
+        <label for="name"
+          ><span>Name:</span>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            minlength="4"
+            maxlength="20"
+          />
+        </label>
+
+        <label for="email"
+          ><span>Email:</span>
+          <input type="email" id="email" name="email" required />
+        </label>
+
+        <label for="message"
+          ><span>Message:</span>
+          <textarea
+            id="message"
+            name="message"
+            required
+            minlength="10"
+            1
+            maxlength="200"
+          ></textarea>
+        </label>
+      </fieldset>
+      <div class="buttons">
+        <button type="reset">Reset</button>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+    <hr />
+    <h2>Result:</h2>
+    <p>Posted Data:</p>
+    <p id="result"></p>
+    <hr />
+    <script type="text/javascript">
+      async function onFormSubmit(e) {
+        e.preventDefault()
+
+        const formData = new FormData(e.target)
+
+        const result = await fetch('http://localhost:3000/api/comments', {
+          method: 'post',
+          body: JSON.stringify({
+            name: formData.get('name'),
+            email: formData.get('email'),
+            message: formData.get('message'),
+          }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }).then(res => res.json())
+
+        const resultEl = document.getElementById('result')
+        resultEl.innerHTML = JSON.stringify(result || {})
+      }
+
+      const formEl = document.getElementsByTagName('form')
+      formEl[0].addEventListener('submit', onFormSubmit)
+    </script>
+  </body>
+</html>
