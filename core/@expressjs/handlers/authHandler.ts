@@ -71,16 +71,32 @@ export async function signInHandler(req, res) {
     { expiresIn: '1h' }
   )
 
+  // storing the tokens at request headers
+  req.session.token = jwtToken
+
+  // setting the same token at browser cookie
+  res.cookie('x-auth-key', jwtToken, { maxAge: 3600000, httpOnly: true })
+
   res.status(200).json({
     message: 'sign in successfully done!',
     token: jwtToken,
   })
 }
 
-export async function getProfileHandler(req, res) {
+export async function profileHandler(req, res) {
   res.status(200).json({
     user: req.user,
   })
+}
+
+export async function logoutHandler(req, res) {
+  // clearing the token
+  req.session.destroy()
+
+  //clearing at browser as well
+  res.clearCookie('x-auth-key')
+
+  res.status(200).json({ message: 'user logout successfully!' })
 }
 
 /**
@@ -92,7 +108,8 @@ export async function getProfileHandler(req, res) {
  * @returns
  */
 export async function authMiddleware(req, res, next) {
-  const jwtTokenFromHeaders = req.headers['x-auth-key']
+  // @note reading the token from session or cookies
+  const jwtTokenFromHeaders = req.session.token || req.cookies['x-auth-key']
 
   if (!jwtTokenFromHeaders) {
     res.status(403).json({
