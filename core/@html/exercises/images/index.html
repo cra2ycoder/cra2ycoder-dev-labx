@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Images</title>
+  </head>
+  <body>
+    <main>
+      <article>
+        <h1>Figure + Caption + Single Image</h1>
+        <figure>
+          <img
+            src="https://images.pexels.com/photos/13003306/pexels-photo-13003306.jpeg?auto=compress&cs=tinysrgb&h=100&dpr=2"
+            alt="Women in Hijab Feeding a Gull"
+            height="100px"
+            loading="lazy"
+          />
+          <figcaption>Women in Hijab Feeding a Gull</figcaption>
+        </figure>
+      </article>
+      <hr />
+      <article>
+        <h1>Figure + Caption + Multiple Images</h1>
+        <figure>
+          <img
+            src="https://images.pexels.com/photos/13003306/pexels-photo-13003306.jpeg?auto=compress&cs=tinysrgb&h=100&dpr=2"
+            alt="Women in Hijab Feeding a Gull"
+            height="100px"
+            loading="lazy"
+          />
+          <img
+            src="https://images.pexels.com/photos/14918735/pexels-photo-14918735.jpeg?auto=compress&cs=tinysrgb&h=100&dpr=2"
+            alt="Rocket Launch Design"
+            height="100px"
+            loading="lazy"
+          />
+          <figcaption>Women in Hijab Feeding a Gull</figcaption>
+        </figure>
+      </article>
+      <hr />
+      <article>
+        <h1>Figure + Caption + Video</h1>
+        <figure>
+          <video controls width="400">
+            <source src="nature.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>A short video of a scenic waterfall.</figcaption>
+          <figcaption></figcaption>
+        </figure>
+      </article>
+      <hr />
+      <article>
+        <h1>Figure + Caption + Audio</h1>
+        <figure>
+          <audio controls>
+            <source src="song.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+          <figcaption>Relaxing nature sounds.</figcaption>
+        </figure>
+      </article>
+      <hr />
+      <article>
+        <h1>Figure + Caption + Code Snippets</h1>
+        <figure>
+          <pre>
+                <code>
+                    function greet() {
+                        console.log("Hello, World!");
+                    }
+                </code>
+            </pre>
+          <figcaption>A simple JavaScript function.</figcaption>
+        </figure>
+      </article>
+    </main>
+  </body>
+</html>
