@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON-LD (Javascript Object Notation - Linked Data)</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "John Doe",
+        "jobTitle": "Software engineer",
+        "email": "john.doe@gmail.com"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Product Name",
+        "description": "Product Description",
+        "image": "https://abc.com/image.png",
+        "price": "$99.00",
+        "brand": {
+          "@type": "Brand",
+          "name": "Brand Name"
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
