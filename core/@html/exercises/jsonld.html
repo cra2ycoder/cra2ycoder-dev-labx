@@ -27,6 +27,32 @@
         }
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "John Doe",
+            "jobTitle": "Software engineer",
+            "email": "john.doe@gmail.com"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Product Name",
+            "description": "Product Description",
+            "image": "https://abc.com/image.png",
+            "price": "$99.00",
+            "brand": {
+              "@type": "Brand",
+              "name": "Brand Name"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body></body>
 </html>
