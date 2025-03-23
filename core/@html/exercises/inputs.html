@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Different Types of Input Fields</title>
+    <style>
+      form {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        max-width: 40%;
+      }
+
+      h2 {
+        width: 100%;
+      }
+
+      fieldset {
+        display: flex;
+        width: 100%;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Different Types of Input Fields</h1>
+    <form action="">
+      <fieldset>
+        <h2>Most often used:</h2>
+        <label>Text: (type="text")<input type="text" /></label>
+        <label>Number: (type="number")<input type="number" /></label>
+        <label>Password: (type="password")<input type="password" /></label>
+        <label>Email: (type="email")<input type="email" /></label>
+        <label>Telephone: (type="tel")<input type="tel" /></label>
+        <label>Radio: (type="radio")<input type="radio" /></label>
+        <label>Checkbox: (type="checkbox")<input type="checkbox" /></label>
+        <label>File: (type="file")<input type="file" /></label>
+      </fieldset>
+
+      <fieldset>
+        <h2>Special:</h2>
+        <label>Color: (type="color")<input type="color" /></label>
+        <label>Range: (type="range")<input type="range" /></label>
+        <label>Search: (type="search")<input type="search" /></label>
+        <label>URL: (type="url")<input type="url" /></label>
+        <label>Hidden: (type="hidden")<input type="hidden" /></label>
+        <label>Image: (type="image")<input type="image" /></label>
+      </fieldset>
+
+      <fieldset>
+        <h2>Calendar:</h2>
+        <label>Date: (type="date")<input type="date" /></label>
+        <label>Time: (type="time")<input type="time" /></label>
+        <label
+          >Date and Time (Local): (type="datetime-local")<input
+            type="datetime-local"
+        /></label>
+        <label>Month: (type="month")<input type="month" /></label>
+        <label>Week: (type="week")<input type="week" /></label>
+      </fieldset>
+
+      <fieldset>
+        <h2>Buttons:</h2>
+        <label>Submit: (type="submit")<input type="submit" /></label>
+        <label>Reset: (type="reset")<input type="reset" /></label>
+        <label
+          >Button: (type="button" & value="button")<input
+            type="button"
+            value="button"
+        /></label>
+      </fieldset>
+    </form>
+  </body>
+</html>

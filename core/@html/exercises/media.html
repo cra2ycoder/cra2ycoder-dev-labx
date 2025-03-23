@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Tags in HTML5</title>
+  </head>
+  <body>
+    <h1>Media Tags in HTML5</h1>
+    <audio controls>
+      <source src="audio.mp3" type="audio/mp3" />
+      <source src="audio.ogg" type="audio/ogg" />
+      browser is not supporting to audio element
+    </audio>
+    <video controls autoplay loop muted poster="thumbnail.jpg">
+      <source src="video.mp4" type="video/mp4" />
+      <source src="video.webm" type="video/webm" />
+      browser is not supporting to video element
+    </video>
+    <iframe
+      width="600"
+      height="350"
+      src="https://www.youtube.com/embed/M-yqIcuVNe8?list=RDGMEMPipJmhsMq3GHGrfqf4WIqAVMM-yqIcuVNe8"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+  </body>
+</html>
