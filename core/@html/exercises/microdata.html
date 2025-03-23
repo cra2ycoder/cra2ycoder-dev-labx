@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Micro Data in HTML5</title>
+  </head>
+  <body>
+    <div itemscope itemtype="https://schema.org/Person">
+      <h2 itemprop="name">John Doe</h2>
+      <p itemprop="jobTitle">Software Engineer</p>
+      <p itemprop="email">john.doe@gmail.com</p>
+    </div>
+    <div itemscope itemtype="https://schema.org/Product">
+      <h2 itemprop="name">Product Name</h2>
+      <p itemprop="description">Product Description</p>
+      <p>Branch: <span itemprop="brand">Brand Name</span></p>
+      <p>Price: $<span itemprop="price">$99.00</span></p>
+    </div>
+    <div itemscope itemtype="https://schema.org/Recipe">
+      <h2 itemprop="name">Recipe Name</h2>
+      <p itemprop="description">Recipe description</p>
+      <p>Cooking Time: <span itemprop="cookTime">45 mins</span></p>
+    </div>
+  </body>
+</html>
