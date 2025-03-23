@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Output Tag at Form</title>
+  </head>
+  <body>
+    <form
+      action="#"
+      oninput="result.value=parseInt(fs.value) + parseInt(ls.value)"
+    >
+      <label for="fs">
+        First Number:
+        <input type="number" id="fs" name="fs" />
+      </label>
+      <label for="ls">
+        Last Number:
+        <input type="number" id="ls" name="ls" />
+      </label>
+      The result is:<output name="result" for="fs ls"></output>
+    </form>
+  </body>
+</html>
