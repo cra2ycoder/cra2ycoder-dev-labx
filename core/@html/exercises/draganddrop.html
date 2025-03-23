@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag and Drop Feature with HTML</title>
+    <style>
+      .shape {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      .draggable-elements {
+        display: flex;
+        gap: 1rem;
+        width: 100%;
+        height: 100px;
+      }
+      .droppable-area {
+        width: 100%;
+        height: 300px;
+        border: 1px dashed red;
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Drag and Drop item into the red dashed box</p>
+    <div class="draggable-elements">
+      <div class="shape" id="drag-item" draggable="true"></div>
+    </div>
+    <div class="droppable-area" id="drop-area"></div>
+    <script>
+      const dragItem = document.getElementById('drag-item')
+      const droppableArea = document.getElementById('drop-area')
+
+      dragItem.addEventListener('dragstart', event => {
+        event.dataTransfer.setData('itemId', event.target.id)
+      })
+
+      // used to prevent browser behaviour
+      droppableArea.addEventListener('dragover', event => {
+        event.preventDefault()
+      })
+
+      droppableArea.addEventListener('drop', event => {
+        event.preventDefault()
+        const droppedItemId = event.dataTransfer.getData('itemId')
+        droppableArea.appendChild(document.getElementById(droppedItemId))
+      })
+    </script>
+  </body>
+</html>
