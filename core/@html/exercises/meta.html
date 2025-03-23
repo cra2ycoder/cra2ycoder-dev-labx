@@ -30,32 +30,37 @@
     content="10;http://localhost:3000/forms/index.html" -->
 
     <!-- sets compatibility mode for specific browser -->
-    <meta name="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- controls caching behavior of a page -->
     <!-- best of dynamic page -->
     <!-- when we use CDNs this is not recommended -->
-    <meta name="cache-control" content="no-cache, no-store, must-revalidate" />
+    <meta
+      http-equiv="cache-control"
+      content="no-cache, no-store, must-revalidate"
+    />
 
     <!-- enabling browser cache for 1hr (3600s) -->
     <!-- <meta name="Cache-Control" content="public, max-age=3600" /> -->
 
     <!-- setting expires of the page -->
-    <meta name="Expires" content="Wed, 21 Mar 2030 07:28:00 GMT" />
+    <meta http-equiv="expires" content="Wed, 21 Mar 2030 07:28:00 GMT" />
 
     <!-- Enhances security by controlling allowed content sources -->
 
     <!-- should allow only same origin assets/resources like, scripts, images, css, etc.., -->
     <!-- self: same origin, same domain, or current deployed domain -->
-    <meta name="Content-Security-Policy" content="default-src 'self'" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'" />
 
     <!-- security risk: unsafe-inline unsafe-eval we have to use nonce -->
     <meta
-      name="Content-Security-Policy"
+      http-equiv="Content-Security-Policy"
       content=" 
         default-src 'self'; 
         script-src 'self' *.abc.com nonce-ABC123xyz==;  // rule for script assets
+        script-src-elem 'self' *.abc.com;
         style-src 'self' *.abc.com nonce-ABC123xyz==;  // rule for style assets & link
+        style-src-elem 'self' *.abc.com;
         image-src 'self' *.abc.com;  // rule for image assets
         font-src 'self' *.abc.com;   // rule for font assets 
         frame-src 'self' *.abc.com; // rule for iframes
