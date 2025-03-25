@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geo Location with HTML5</title>
+  </head>
+  <body>
+    <button onclick="locationObj.getCurrentPosition()">
+      Get Current Location
+    </button>
+    <button onclick="locationObj.getAddress()">Get Address</button>
+    <p id="result"></p>
+
+    <script>
+      class CustomLocation {
+        constructor() {
+          this.hasGeoLocationSupport = false
+          this.resultElement = document.getElementById('result')
+
+          if ('geolocation' in navigator) {
+            this.hasGeoLocationSupport = true
+          } else {
+            this.hasGeoLocationSupport = false
+            this.resultElement.textContent = `geo location is supported by your browser`
+            console.error(`geo location is supported by your browser`)
+          }
+        }
+
+        getLocationInfo(callback) {
+          if (this.hasGeoLocationSupport) {
+            navigator.geolocation.getCurrentPosition(
+              position => {
+                const { latitude, longitude } = position.coords
+                callback(latitude, longitude)
+              },
+              err => {},
+              {
+                enableHighAccuracy: true, // find to more accuracy
+                timeout: 10000, //wait for max 10s
+                maximumAge: 0, // no cache location
+              }
+            )
+          }
+        }
+
+        getCurrentPosition() {
+          this.getLocationInfo((lat, long) => {
+            this.resultElement.textContent = `Your current location is: ${long}, ${lat}`
+          })
+        }
+
+        getAddress() {
+          this.getLocationInfo(async (lat, long) => {
+            const response = await fetch(
+              `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${long}`
+            )
+            const data = await response.json()
+            this.resultElement.textContent = `Your current address is: ${JSON.stringify(
+              data.address
+            )}`
+          })
+        }
+      }
+
+      const locationObj = new CustomLocation()
+    </script>
+  </body>
+</html>
