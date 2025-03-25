@@ -14,12 +14,18 @@
 
       :not(:active):focus-visible {
         outline-offset: 0.5rem;
+        transition-duration: 0.25s;
       }
 
       form * {
         margin: 1rem;
       }
 
+      /*
+      Some people get dizzy or uncomfortable with too many animations on a website. So, their computer settings let them reduce animations.
+      no-preference → The user is okay with animations (so you can show them).
+      reduce → The user doesn’t want animations (so you should turn them off).
+      */
       @media (prefers-reduced-motion: no-preference) {
         :focus-visible {
           transition: outline-offset 75ms ease-out;
@@ -27,14 +33,11 @@
           /* this will help only just for focus alone not for click */
           /* outline-offset: 0.5rem; */
         }
-
-        :not(:active):focus-visible {
-          transition-duration: 0.25s;
-        }
       }
     </style>
   </head>
   <body>
+    <p>Press the tab key to view the experience:</p>
     <form action="#">
       <button>press</button>
       <button>the</button>
