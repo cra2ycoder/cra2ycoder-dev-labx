@@ -12,7 +12,7 @@ type TAPIProvider = {
 function APIProvider(props: Readonly<TAPIProvider>) {
   return (
     <QueryClientProvider client={queryClient}>
-      {props.children}
+      {children}
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   )
