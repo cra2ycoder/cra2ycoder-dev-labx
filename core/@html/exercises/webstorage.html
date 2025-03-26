@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Storage from HTML5</title>
+  </head>
+  <body>
+    <h1>Web Storage from HTML5</h1>
+    <form id="storage-form" action="#">
+      <h2>Store a Cookie</h2>
+      <fieldset>
+        <label for="ls-type">
+          <input
+            type="radio"
+            name="storage-type"
+            id="ls-type"
+            value="localStorage"
+          />
+          Local Storage
+        </label>
+        <label for="ss-type">
+          <input
+            type="radio"
+            name="storage-type"
+            id="ss-type"
+            value="sessionStorage"
+          />
+          Session Storage
+        </label>
+      </fieldset>
+      <fieldset>
+        <label for="key">Key</label>
+        <input type="text" name="key" id="key" />
+        <label for="value">Value</label>
+        <input type="text" name="value" id="value" />
+      </fieldset>
+      <fieldset>
+        <button type="button" onclick="deleteAKey()">Delete</button>
+        <button type="button" onclick="readAKey()">Read</button>
+        <button type="button" onclick="storeAKey()">Store</button>
+        <button type="button" onclick="clearAll()">Clear All</button>
+      </fieldset>
+    </form>
+    <p id="result"></p>
+
+    <script>
+      function collectInfoFromForm() {
+        const formEl = document.getElementById('storage-form')
+        const formData = new FormData(formEl)
+        return {
+          storageType: formData.get('storage-type'),
+          key: formData.get('key'),
+          value: formData.get('value'),
+        }
+      }
+
+      function printResult(message) {
+        const resultEl = document.getElementById('result')
+        resultEl.textContent = message
+      }
+
+      function handleForm(event) {
+        event.preventDefault()
+      }
+
+      function clearAll() {
+        const data = collectInfoFromForm()
+        window[data.storageType].clear()
+      }
+
+      function deleteAKey() {
+        const data = collectInfoFromForm()
+        window[data.storageType].removeItem(data.key)
+        printResult(`${data.key} at ${data.storageType} is successfully delete`)
+      }
+
+      function readAKey() {
+        const data = collectInfoFromForm()
+        const result = window[data.storageType].getItem(data.key)
+        printResult(
+          `Your data for a ${data.key} at ${data.storageType} is: ${result}`
+        )
+      }
+
+      function storeAKey() {
+        const data = collectInfoFromForm()
+        window[data.storageType].setItem(data.key, data.value)
+        printResult(`Successfully stored`)
+      }
+    </script>
+    <script>
+      const typeOfData = {
+        boolean: true,
+        string: 'string',
+        array: [1, 2, 4],
+        object: {},
+        null: null,
+        undefined: undefined,
+        number: 1,
+        function: () => {},
+      }
+
+      for (let key in typeOfData) {
+        // string type conversion will happen
+        // then stored
+        localStorage.setItem(key, typeOfData[key])
+        sessionStorage.setItem(key, typeOfData[key])
+
+        const lsType = typeof localStorage.getItem(key)
+        const ssType = typeof sessionStorage.getItem(key)
+        console.log(`type of localStorage >>>>`, { lsType, ssType })
+      }
+
+      // asking to clear automatically after 10s
+      //   setTimeout(() => {
+      //     localStorage.clear()
+      //   }, 10 * 1000)
+    </script>
+  </body>
+</html>
