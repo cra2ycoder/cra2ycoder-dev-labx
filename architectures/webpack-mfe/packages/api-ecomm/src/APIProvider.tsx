@@ -1,10 +1,15 @@
+import React from 'react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 // Create a client
 const queryClient = new QueryClient()
 
-function APIProvider(props: any) {
+type TAPIProvider = {
+  children?: React.ReactNode
+}
+
+function APIProvider(props: Readonly<TAPIProvider>) {
   return (
     <QueryClientProvider client={queryClient}>
       {props.children}
