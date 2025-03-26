@@ -1,13 +1,20 @@
 import * as express from 'express'
-import path from 'path'
 import * as fs from 'fs'
 
 const server = express()
 
 server.use(express.static('./examples'))
+server.use(express.static('./grids'))
 
 server.get('*', (req, res) => {
-  const listOfHTMLFiles = fs.readdirSync('./examples')
+  const listOfExamples = fs.readdirSync('./examples')
+  const listOfGrids = fs.readdirSync('./grids')
+
+  const getHTMLLinks = (fileOrFolderName: string[]) => {
+    return fileOrFolderName
+      .map(x => `<li><a href="http://localhost:3000/${x}">${x}</a></li>`)
+      .join('\n')
+  }
 
   const htmlString = `
     <!DOCTYPE html>
@@ -19,13 +26,12 @@ server.get('*', (req, res) => {
         </head>
         <body>
             <h1>List of CSS Examples</h1>
+            <p>Interesting Things:</p>
             <ul>
-            ${listOfHTMLFiles
-              .map(
-                x => `<li><a href="http://localhost:3000/${x}">${x}</a></li>`
-              )
-              .join('\n')}
+            ${getHTMLLinks(listOfExamples)}
             </ul>
+            <p>CSS Grids:</p>
+            ${getHTMLLinks(listOfGrids)}
         </body>
     </html>
   `
