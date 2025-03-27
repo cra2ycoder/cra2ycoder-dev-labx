@@ -9,11 +9,14 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         grid-auto-rows: minmax(180px, 1fr);
+        /* 🚀 Only works in Firefox */
+        /*grid-auto-rows: masonry;*/
         grid-auto-flow: dense;
         gap: 4px;
       }
 
       .item {
+        /* aspect-ratio: 1 / 2; */
         border: 1px dashed #888;
         border-radius: 4px;
         place-content: center;
