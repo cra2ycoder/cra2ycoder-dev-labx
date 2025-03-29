@@ -5,7 +5,6 @@
  * @return {Array<U>}
  */
 Array.prototype.myReduce = function (callbackFn, initialValue) {
-  // throw 'Not implemented!';
   if (this === null) {
     throw new TypeError('Array value should not be null')
   }
