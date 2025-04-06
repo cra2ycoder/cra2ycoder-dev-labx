@@ -4,12 +4,12 @@ import { updateTask, deleteTask, TTodoItem } from '../store/todoSlice'
 
 function TodoItem(props: Readonly<TTodoItem>) {
   const dispatch = useDispatch()
-  const labelRef = useRef(null)
-  const userInputAsDraft = useRef(null)
+  const labelRef = useRef<HTMLParagraphElement>(null)
+  const userInputAsDraft = useRef<string>(undefined)
   const [editMode, setEditMode] = useState<boolean>(false)
 
   const handleUserChange = () => {
-    userInputAsDraft.current = labelRef.current.innerText
+    userInputAsDraft.current = labelRef.current?.innerText
   }
 
   const handleKeyboardEvent = (
@@ -26,7 +26,7 @@ function TodoItem(props: Readonly<TTodoItem>) {
       dispatch(
         updateTask({
           id: props.id,
-          task: userInputAsDraft.current || '',
+          task: userInputAsDraft.current ?? '',
         })
       )
     } else {

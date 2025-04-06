@@ -26,7 +26,7 @@ export const todoSlice = createSlice({
         task: action.payload,
       })
     },
-    updateTask: (state, action: PayloadAction) => {
+    updateTask: (state, action: PayloadAction<TTodoItem>) => {
       const updateItem = state.list.find(x => x.id === action.payload.id)
 
       if (updateItem) {
