@@ -3,7 +3,7 @@
 ```bash
 
 # for creating vite setup
-npm create vite@latest . -- --template react-ts
+pnpm create vite@latest . -- --template react-ts
 
 # for installation
 pnpm install
@@ -17,4 +17,12 @@ pnpm dev
 
 ```bash
 pnpm install @reduxjs/toolkit react-redux
+```
+
+## installing tailwindcss
+
+- [tailwindcss](https://tailwindcss.com/docs/installation/using-vite)
+
+```bash
+pnpm install tailwindcss @tailwindcss/vite
 ```
