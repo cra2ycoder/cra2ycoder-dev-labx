@@ -1,6 +1,10 @@
 import { useRef, useState, useEffect } from 'react'
+import { todoState } from '../store/todoState'
 
 function TodoItem(props: Readonly<any>) {
+  const updateTask = todoState(state => state.updateTask)
+  const deleteTask = todoState(state => state.deleteTask)
+
   const labelRef = useRef<HTMLParagraphElement>(null)
   const userInputAsDraft = useRef<string>(undefined)
   const [editMode, setEditMode] = useState<boolean>(false)
@@ -20,15 +24,17 @@ function TodoItem(props: Readonly<any>) {
   const handleEditTask = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (editMode === true) {
       setEditMode(false)
-
-      // @todo
+      updateTask({
+        id: props.id,
+        task: userInputAsDraft.current ?? '',
+      })
     } else {
       setEditMode(true)
     }
   }
 
   const handleDeleteTask = (e: React.MouseEvent<HTMLButtonElement>) => {
-    // @todo
+    deleteTask(props.id)
   }
 
   useEffect(() => {

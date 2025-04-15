@@ -1,8 +1,10 @@
 import { useRef } from 'react'
+import { todoState } from '../store/todoState'
 import TodoItem from './TodoItem'
 
 function TodoList() {
-  const list = []
+  const list = todoState(state => state.list)
+  const createTask = todoState(state => state.createTask)
 
   const formRef = useRef<HTMLFormElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -13,8 +15,7 @@ function TodoList() {
     const userInput = formData.get('task')
 
     if (userInput) {
-      //@todo post the data to save into state
-      // @todo
+      createTask(userInput)
       inputRef.current.value = ''
     }
   }
