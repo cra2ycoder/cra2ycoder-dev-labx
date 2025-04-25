@@ -47,7 +47,14 @@
         to {
           transform: translateX(0);
         }
-      }
+      }'
+
+        @supports (display:flex) {
+          .selector {
+            display:flex;
+            flex-direction: column;
+          }
+        }
     </style>
   </head>
   <body>
