@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Variables</title>
+    <style type="text/css">
+      /* root variables for global use */
+      :root {
+        --page-bg-color: black;
+        --page-heading-color: white;
+      }
+
+      @property --my-own-property {
+        /* property that going to be used */
+        syntax: '<color>';
+
+        /* allows inherits */
+        inherits: false;
+
+        /* default value */
+        initial-value: cornflowerblue;
+      }
+
+      body {
+        background-color: var(--page-bg-color);
+      }
+
+      h1 {
+        /* scope level custom overwrite will not impact the global one */
+        --page-heading-color: red;
+        color: var(--page-heading-color);
+      }
+
+      h2 {
+        color: var(--page-heading-color);
+      }
+
+      p {
+        /* --my-own-property: purple; */
+        color: var(--my-own-property);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Page Heading</h1>
+    <h2>Page Heading 2</h2>
+    <p>my custom text</p>
+  </body>
+</html>
