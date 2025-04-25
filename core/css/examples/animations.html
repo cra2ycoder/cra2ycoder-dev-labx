@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Animations</title>
+    <style type="text/css">
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(pink 15%, purple);
+        filter: drop-shadow(13px 14px 10px gray);
+        /* transition: all 250ms linear(0, 0.25 75%, 1); */
+        transition: all 250ms cubic-bezier(0.42, 0, 0.17, 1.03);
+      }
+
+      .box.trans {
+        transform: translateX(400px);
+      }
+
+      .circle {
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(red, brown);
+        border-radius: 50%;
+        filter: drop-shadow(13px 14px 10px gray);
+        animation: myAnim 1s ease-in-out infinite;
+      }
+
+      button {
+        margin-top: 3rem;
+      }
+
+      @keyframes myAnim {
+        from {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(100%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box" id="box"></div>
+      <div class="circle" id="circle"></div>
+    </div>
+    <button onclick="animateBox();">Animate Box</button>
+    <script>
+      function animateBox() {
+        const boxEl = document.getElementById('box')
+        boxEl.classList.toggle('trans')
+      }
+    </script>
+  </body>
+</html>
