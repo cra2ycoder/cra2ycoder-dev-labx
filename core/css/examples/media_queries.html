@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Queries</title>
+    <style type="text/css">
+      @media (400px <= width <= 700px) {
+        .my-text {
+          color: red;
+        }
+      }
+
+      @media (height > 400px) {
+        .my-text {
+          font-size: 2rem;
+        }
+      }
+
+      /* operating machine specific option (dark | light | system) */
+      @media (prefers-color-scheme: dark) {
+        .my-text {
+          color: blue;
+        }
+      }
+
+      /* when user doesn't wanted animation in the page */
+      @media (prefers-reduced-motion: reduce) {
+      }
+
+      /* user is fine with the animations */
+      @media (prefers-reduced-motion: no-preference) {
+      }
+
+      @media screen and (min-width: 400px) {
+        body {
+          background-color: aqua;
+        }
+      }
+
+      @media (orientation: portrait) {
+        body {
+          background-color: green;
+        }
+      }
+
+      @media (max-width: 300px) {
+        .my-text {
+          font-size: 4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p class="my-text">Test label for Media Queries</p>
+  </body>
+</html>
