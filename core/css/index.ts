@@ -3,6 +3,7 @@ import * as fs from 'fs'
 
 const server = express()
 
+server.use(express.static('./fonts'))
 server.use(express.static('./examples'))
 server.use(express.static('./grids'))
 

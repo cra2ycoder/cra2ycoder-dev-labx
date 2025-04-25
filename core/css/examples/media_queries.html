@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Media Queries</title>
     <style type="text/css">
+      /* @import 'filename.css';
+      @import 'filename.css' print, screen;
+      @import 'grid.css' supports(display: grid);
+      @import url('./location-to-file/filename.css'); */
+
       @media (400px <= width <= 700px) {
         .my-text {
           color: red;
@@ -47,6 +52,13 @@
       @media (max-width: 300px) {
         .my-text {
           font-size: 4rem;
+        }
+      }
+
+      @media print {
+        .my-text {
+          color: black;
+          text-decoration: underline;
         }
       }
     </style>
