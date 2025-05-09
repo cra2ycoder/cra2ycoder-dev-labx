@@ -24,3 +24,23 @@ sudo python -m ensurepip --upgrade
 #if pip is required to be updated
 pip install --upgrade pip
 ```
+---
+
+## how to run python code?
+
+```sh
+py <file_name>.py
+
+
+
+1. right click on the file
+2. choose `Run Python > Run Python File in Terminal`
+```
+---
+
+## useful commands
+
+```sh
+# version check
+python --version
+```
