@@ -4,7 +4,12 @@
   "main": "index.ts",
   "description": "",
   "private": "true",
-  "scripts": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "29.7.0"
+  },
   "keywords": [],
   "author": "",
   "license": "MIT"

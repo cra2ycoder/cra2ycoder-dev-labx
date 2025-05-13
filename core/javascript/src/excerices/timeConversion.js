@@ -23,7 +23,6 @@ function timeConversion(s) {
   return `${rHour}:${convert(+min)}:${convert(+sec)}`
 }
 
-console.log(timeConversion('12:00:00AM'))
-console.log(timeConversion('12:01:00PM'))
-console.log(timeConversion('03:10:20PM'))
-console.log(timeConversion('06:40:03AM'))
+module.exports = {
+  timeConversion,
+}

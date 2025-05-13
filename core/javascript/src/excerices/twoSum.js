@@ -1,7 +1,4 @@
-// sum([]), 0
-// sum([1, 5.2, 4, 0, -1]), 9.2
-
-function sum(numbers) {
+function twoSum(numbers) {
   if (numbers && numbers.length === 0) {
     return 0
   }
@@ -9,5 +6,6 @@ function sum(numbers) {
   return result
 }
 
-sum([]) // 0
-sum([1, 5.2, 4, 0, -1]) // 9.2
+module.exports = {
+  twoSum,
+}
