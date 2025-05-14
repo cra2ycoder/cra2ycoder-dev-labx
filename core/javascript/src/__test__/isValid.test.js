@@ -1,21 +1,9 @@
 const { isValid } = require('../excerices/isValid')
 
-test('[]', () => {
+test('isValid', () => {
   expect(isValid('[]')).toBe(true)
-})
-
-test('()', () => {
   expect(isValid('()')).toBe(true)
-})
-
-test('()[]{}', () => {
   expect(isValid('()[]{}')).toBe(true)
-})
-
-test('(]', () => {
   expect(isValid('(]')).toBe(false)
-})
-
-test('([])', () => {
   expect(isValid('([])')).toBe(true)
 })

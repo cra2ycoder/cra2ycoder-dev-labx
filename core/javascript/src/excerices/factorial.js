@@ -7,7 +7,16 @@ function factorial(n) {
     return 1
   }
 
-  return n * factorial(n - 1)
+  // iterative model
+  let result = 1
+  for (let i = 2; i <= n; i++) {
+    result *= i
+  }
+
+  return result
+
+  // recursive model
+  // return n * factorial(n - 1)
 }
 
 module.exports = {
