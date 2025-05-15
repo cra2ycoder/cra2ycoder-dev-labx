@@ -43,4 +43,5 @@ export const todoSlice = createSlice({
 export const { createTask, deleteTask, updateTask } = todoSlice.actions
 
 // using this one to append into store
+// !!!remember it is not reducers property from the `createSlice` it is actually `reducer`
 export default todoSlice.reducer
