@@ -2,8 +2,9 @@ import { Suspense } from 'react'
 import Counter from '@/components/Counter'
 import Accordion from '@/components/Accordion'
 import ContactForm from '@/components/ContactForm'
-import ApiComponent from '@/components/ApiComponent'
+// import ApiComponent from '@/components/ApiComponent'
 import SimpleForm from '@/components/SimpleForm'
+import CommentForm from '@/components/CommentForm'
 
 export default function Home() {
   return (
@@ -20,6 +21,8 @@ export default function Home() {
         <ApiComponent />
       </Suspense>
       <hr /> */}
+      <hr />
+      <CommentForm />
     </div>
   )
 }
