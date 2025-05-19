@@ -5,6 +5,8 @@ import ContactForm from '@/components/ContactForm'
 // import ApiComponent from '@/components/ApiComponent'
 import SimpleForm from '@/components/SimpleForm'
 import CommentForm from '@/components/CommentForm'
+import PriceManager from '@/components/PriceManager'
+import UseCallbackPerf from '@/components/UseCallbackPerf'
 
 export default function Home() {
   return (
@@ -23,6 +25,10 @@ export default function Home() {
       <hr /> */}
       <hr />
       <CommentForm />
+      <hr />
+      <PriceManager />
+      <hr />
+      <UseCallbackPerf />
     </div>
   )
 }
