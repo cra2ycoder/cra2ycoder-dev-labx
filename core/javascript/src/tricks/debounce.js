@@ -1,9 +1,14 @@
-function debounce(func, waitInMs) {
+function debounce(fn, delay) {
   let timer = null
-
-  return () => {
-    clearTimeout(timer)
-    timer = setTimeout(func, waitInMs)
+  return function (...args) {
+    if (timer) {
+      clearTimeout(timer)
+    }
+    timer = setTimeout(function () {
+      console.log(this)
+      fn.apply(this, args)
+      timer = null
+    }, delay)
   }
 }
 

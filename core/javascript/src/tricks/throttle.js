@@ -1,12 +1,14 @@
-function throttle(func, intervalInMs) {
+function throttle(fn, delay) {
   let timer = null
 
-  return () => {
+  return function (...args) => {
     if (timer === null) {
-      func()
+      // console.log(this)
+      fn.apply(this, args)
+
       timer = setTimeout(() => {
         timer = null
-      }, intervalInMs)
+      }, delay)
     }
   }
 }
