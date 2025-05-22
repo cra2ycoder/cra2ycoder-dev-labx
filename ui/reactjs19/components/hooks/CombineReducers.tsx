@@ -51,6 +51,7 @@ function CombineReducers() {
   return (
     <div>
       <div>{JSON.stringify(state)}</div>
+      <hr />
       <div>
         <button onClick={toggleState}>
           {state.component1?.toggle.toUpperCase()}
