@@ -1,6 +1,7 @@
 import CounterWithReducer from '@/components/hooks/CounterWithReducer'
 import CombineReducers from '@/components/hooks/CombineReducers'
 import ForwardRef from '@/components/ForwardRef'
+import UseMemo from '@/components/hooks/UseMemo'
 
 export default function hooks() {
   return (
@@ -13,6 +14,8 @@ export default function hooks() {
       <hr />
       <h2>forwardRef approach</h2>
       <ForwardRef />
+      <hr />
+      <UseMemo />
     </>
   )
 }
