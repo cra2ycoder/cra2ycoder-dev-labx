@@ -3,6 +3,7 @@ import CombineReducers from '@/components/hooks/CombineReducers'
 import ForwardRef from '@/components/ForwardRef'
 import UseMemo from '@/components/hooks/UseMemo'
 import DebouncedInputBox from '@/components/DebouncedInputBox'
+import UseOptimistic from '@/components/hooks/UseOptimistic'
 
 export default function hooks() {
   return (
@@ -19,6 +20,8 @@ export default function hooks() {
       <UseMemo />
       <hr />
       <DebouncedInputBox />
+      <hr />
+      <UseOptimistic />
     </>
   )
 }
