@@ -103,3 +103,16 @@ function arrAddition() {
 }
 
 // arrAddition()
+
+let x = 10
+
+function check() {
+  console.log(x) // undefined
+
+  if (false) {
+    // this will not execute
+    var x = 20
+  }
+}
+
+check()
