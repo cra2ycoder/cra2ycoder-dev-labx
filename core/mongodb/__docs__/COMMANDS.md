@@ -1,0 +1,3 @@
+- `show dbs` - used to see all the collections from the db
+- `use <db_collection_name>` - switching to the respective db collection
+- 
