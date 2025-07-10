@@ -50,6 +50,12 @@ sudo mongod --config /Users/mohaa/mongodb/mongod.cfg
 
 ## Helpful Articles/ Docs
 
-- [More Details about Config Files](https://docs.mongodb.com/manual/reference/configuration-options/)
-- [More Details about the Shell (mongo) Options](https://www.mongodb.com/docs/manual/reference/method/)
-- [More Details about the Server (mongod) Options](https://docs.mongodb.com/manual/reference/program/mongod/)
+- [Config Files](https://docs.mongodb.com/manual/reference/configuration-options/)
+- [the Shell (mongo) Options](https://www.mongodb.com/docs/manual/reference/method/)
+- [the Server (mongod) Options](https://docs.mongodb.com/manual/reference/program/mongod/)
+
+
+## MongoDB Compass
+
+- [MongoDB Compass](https://docs.mongodb.com/compass/master/install/)
+- [Only available in the Enterprise Edition => Exploring Schemas in Compass](https://docs.mongodb.com/compass/master/schema/)
