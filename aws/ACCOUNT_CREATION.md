@@ -1,5 +1,3 @@
-
-
 # Creating an AWS Account?
 
 - hit `https://aws.amazon.com/`
