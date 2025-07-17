@@ -2,6 +2,25 @@
 
 - db.<collection_name>.insertOne({ %JSON_DATA% }, options)
 - db.<collection_name>.insertMany([{ %JSON_DATAT% }], options)
+- db.<collection_name>.insertOne({ %JSON_DATA% }, { ordered: true/false })
+
+- db.<collection_name>.insertOne({ %JSON_DATA% }, { writeConcern: { w: 1, j: true, wtimeout:200 } })
+  - w: write
+  - j: journal
+  - wtimeout: timeout
+
+<!-- not recommended -->
+- db.<collection_name>.insert({ %JSON_DATA% }, options)
+- db.<collection_name>.insert([{ %JSON_DATA% }], options)
+
+```js
+db.companies.insertOne({ _id: "google", name: 'Google', stock: 2000 })
+db.companies.insertMany([{ _id: "infosys", name: 'Infosys', stock: 1500 }, { name: 'Apple', stock: 2100 }])
+
+db.companies.insertOne({ _id: "google", name: 'Google', stock: 2000 }, { ordered: false })
+db.companies.insertOne({ name: 'Wipro', stock: 1200 }, { writeConcern: { w:1, j: true, wtimeout: 200 }})
+db.companies.insertOne({ name: 'Cisco', stock: 1800 }, { writeConcern: { w:1, j: false, } })
+```
 
 ## Read
 
@@ -30,5 +49,19 @@
 - db.<collection_name>.deleteOne(filter, options)
 - db.<collection_name>.deleteMany(filter, options)
 
+## Import
+
+- importing local json files into mongo db
+
+```s
+monogimport <%file_name.json%> -d <%db_name%> -c <%coll_name> --jsonArray --drop
+```
 
 
+## Useful Links
+
+- [insertOne()](https://docs.mongodb.com/manual/reference/method/db.collection.insertOne)
+- [insertMany()](https://docs.mongodb.com/manual/reference/method/db.collection.insertMany)
+- [Atomicity](https://docs.mongodb.com/manual/core/write-operations-atomicity/#atomicity)
+- [Write Concern](https://docs.mongodb.com/manual/reference/write-concern/)
+- [Using mongoimport](https://docs.mongodb.com/manual/reference/program/mongoimport/index.html)
