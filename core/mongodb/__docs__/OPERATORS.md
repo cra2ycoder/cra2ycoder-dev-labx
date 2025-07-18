@@ -40,3 +40,43 @@
 ## deep search (nested)
 
 - db.<col_name>.find({ "status.desc.state": "value" }).pretty()
+
+---
+
+## Query Selectors
+
+- reference doc: `https://www.mongodb.com/docs/v7.0/reference/operator/query/`
+
+- Comparsion
+- Evaluation
+- Logical
+- Array
+- Element
+- Comments
+- Geospatial
+
+## Projection Operators
+
+- $
+- $elemMatch
+- $meta
+- $slice
+
+
+## Examples
+
+- Exact Match ( name === 'test' ) => returns only matching exact item(s)
+db.<collection_name>.find({ name: "test" })
+db.<collection_name>.findOne({ name: "test" })
+
+- Exact match ( list === ['test'] ) => returns only matching exact item(s)
+db.<collection_name>.findOne({ list: ["test"] })
+
+db.<collection_name>.findOne({ value: { $gt: 100 } })
+db.<collection_name>.findOne({ value: { $lt: 100 } })
+db.<collection_name>.findOne({ value: { $gte: 100 } })
+db.<collection_name>.findOne({ value: { $lte: 100 } })
+db.<collection_name>.findOne({ value: { $eq: 100 } })
+
+db.<collection_name>.findOne({ list: { $in: ["test"] } })
+db.<collection_name>.findOne({ list: { $nin: ["test"] } })
