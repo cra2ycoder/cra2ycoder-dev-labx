@@ -80,3 +80,33 @@ db.<collection_name>.findOne({ value: { $eq: 100 } })
 
 db.<collection_name>.findOne({ list: { $in: ["test"] } })
 db.<collection_name>.findOne({ list: { $nin: ["test"] } })
+
+- nested object
+db.<collection_name>.findOne({ "obj1.obj2": { $gt: 300 } })
+db.<collection_name>.findOne({ "obj1.obj2": { $gt: 300 } }).count()
+
+
+## type
+
+db.<collection_name>.findOne({ name: { $type: "string" } })
+db.<collection_name>.findOne({ name: { $type: "int" } })
+db.<collection_name>.findOne({ name: { $type: "double" } })
+db.<collection_name>.findOne({ name: { $type: "decimal" } })
+db.<collection_name>.findOne({ name: { $type: "date" } })
+db.<collection_name>.findOne({ name: { $type: "object" } })
+
+## regex
+
+db.<collection_name>.findOne({ name: /test/ })
+
+## logical
+
+db.<collection_name>.findOne({ $and: [{ value: { $gt: 100 } }, { value: { $lt: 200 } }] })
+db.<collection_name>.findOne({ $or: [{ value: { $gt: 100 } }, { value: { $lt: 200 } }] })
+db.<collection_name>.findOne({ $nor: [{ value: { $gt: 100 } }, { value: { $lt: 200 } }] })
+db.<collection_name>.findOne({ $not: { value: { $gt: 100 } } })
+
+## expression
+
+db.<collection_name>.findOne({ $expr: { $eq: ["$name", "test"] } })
+db.<collection_name>.findOne({ $expr: { $eq: { if: { $gt: ["$value", 100] }, then: "test", else: "test2" } } }).count()
