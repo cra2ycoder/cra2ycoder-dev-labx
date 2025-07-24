@@ -86,3 +86,42 @@ db.<collection_name>.udpateOne({ name: "test" }, { $inc: { age: -1 }})
 
 >> error will be received (cant update same property with different operation)
 db.<collection_name>.updateMany({ isSporty: true}, { $set: { age: 32}, $inc: { age: 1 }})
+
+>> multiply value
+db.<collection_name>.udpateOne({ name: "test" }, { $mul: { age: 1.1 }})
+
+>> set minimum value which is less than expected
+db.<collection_name>.udpateOne({ name: "test" }, { $min: { age: 30 }})
+
+>> set maximum value which is greater than expected
+db.<collection_name>.udpateOne({ name: "test" }, { $min: { age: 38 }})
+
+>> remove a property from a object using $unset
+>> here, value cant be taken only it will look for property
+db.<collection_name>.udpateOne({ name: "test" }, { $unset: { phone: "" }})
+
+>> renaming the existing property name
+db.<collection_name>.udpateOne({ name: "test" }, { $rename: { age: "totalAge" }})
+
+
+db.sports.updateOne(
+  { title: "Football" },
+  { $set: { title: "Football", requiresTeam: true } },
+  { upsert: true }
+)
+
+db.sports.updateOne(
+  { title: "Tennis" },
+  { $set: { title: "Tennis", requiresTeam: false } },
+  { upsert: true }
+)
+
+db.sports.updateMany(
+  { requiresTeam: true },
+  { $set: { minPlayers: 5 } }
+)
+
+db.sports.updateMany(
+  { requiresTeam: true },
+  { $inc: { minPlayers: 10 } }
+)
