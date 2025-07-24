@@ -65,3 +65,24 @@ monogimport <%file_name.json%> -d <%db_name%> -c <%coll_name> --jsonArray --drop
 - [Atomicity](https://docs.mongodb.com/manual/core/write-operations-atomicity/#atomicity)
 - [Write Concern](https://docs.mongodb.com/manual/reference/write-concern/)
 - [Using mongoimport](https://docs.mongodb.com/manual/reference/program/mongoimport/index.html)
+
+
+## Update
+
+>> update only one value (primitive)
+db.<collection_name>.updateOne({ name: "test" }, { $set: { age: 10 } })
+
+>> update array value (overwritten)
+db.<collection_name>.updateOne({ name: "test" }, { $set: { hobbies: ["cooking", "sports", "musics"]} })
+
+>> update many 
+db.<collection_name>.updateMany({ isSporty: true }, { $set: { isSporty: false} })
+
+>> increment value (age = age + 1)
+db.<collection_name>.udpateOne({ name: "test" }, { $inc: { age: 1 }})
+
+>> increment value (age = age - 1)
+db.<collection_name>.udpateOne({ name: "test" }, { $inc: { age: -1 }})
+
+>> error will be received (cant update same property with different operation)
+db.<collection_name>.updateMany({ isSporty: true}, { $set: { age: 32}, $inc: { age: 1 }})
