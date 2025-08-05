@@ -103,7 +103,22 @@ db.<collection_name>.udpateOne({ name: "test" }, { $unset: { phone: "" }})
 >> renaming the existing property name
 db.<collection_name>.udpateOne({ name: "test" }, { $rename: { age: "totalAge" }})
 
+>> adding new property into the existing object (instead of overwritting)
+db.<collection_name>.updateOne({ name: "test" }, { $set: { "x.y.$.newProperty" : "new property value" }})
 
+>> updating all the matching element of the `y` property
+db.<collection_name>.updateMany({ name: "test" }, { $set: { "x.y.$" : "new property value" }})
+
+>> updating all the matching element inside all array element with new property
+db.<collection_name>.updateMany({ name: "test" }, { $set: { "x.y.$[].newProp" : "new property value" }})
+
+>> arrayFilters
+db.users.updateMany({"a.b": {$gt:2}}, { $set: { "x.$[prop].y" : true} }, arrayFilter: [{ "prop.z": {$gt: 2} }])
+
+>> adding an item to an array: $push, $each, $sort, $addToSet (only adds unique value not duplicates)
+>> removing an item from an array: $pull, $pop
+
+```js
 db.sports.updateOne(
   { title: "Football" },
   { $set: { title: "Football", requiresTeam: true } },
@@ -125,3 +140,4 @@ db.sports.updateMany(
   { requiresTeam: true },
   { $inc: { minPlayers: 10 } }
 )
+```
